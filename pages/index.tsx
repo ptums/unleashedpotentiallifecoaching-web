@@ -1,27 +1,28 @@
 import React from "react";
 import { GetStaticProps } from 'next'
-import SiteHead from "components/SiteHead"
-import Main from "layouts/Main"
+import HomePage from "components/pages/HomePage";
 import { homePageQuery } from "utils/api"
-const SEO = {
-  title: 'Unleashed Potential: Life Coaching',
-  metaDescription:
-    'Unleashed Potential: Life Coaching helps you uncover your purpose by identifying negative behaviors and giving a plan to achieve your goals.',
+import { Banner, FeaturdContent, BlockWidget } from "types/Home";
+import { Seo } from "types/SEO"
+
+
+
+
+interface Props {
+  banner: Banner,
+  featuredContent: FeaturdContent,
+  blockWidgets: BlockWidget[],
+  seo: Seo
 }
-const Home = ({ banner, featuredContent, blockWidgets }) => {
-  console.log({
+
+const Home: React.FC<Props> = ({ banner, featuredContent, blockWidgets, seo }: Props) => {
+  const HomePageProps = {
     banner,
     featuredContent,
-    blockWidgets
-  })
-  return (
-    <>
-      <SiteHead {...SEO} />
-      <Main>
-        Meat and potatoes
-      </Main>
-    </>
-  )
+    blockWidgets,
+    seo
+  }
+  return <HomePage {...HomePageProps} />
 }
 
 
@@ -34,8 +35,13 @@ export const getStaticProps: GetStaticProps = async () => {
     imageUrl: block.widget_image
   }))
 
+  console.log(page.featured_mesage_body);
   return {
     props: {
+      seo: {
+        title: page.seo_title[0].text,
+        metaDescription: page.seo_meta_description[0].text,
+      },
       banner: {
         imageUrl: page.banner_background_image.url,
         lineOne: page.banner_line_one[0].text,
@@ -44,7 +50,9 @@ export const getStaticProps: GetStaticProps = async () => {
       featuredContent: {
         imageUrl: page.featured_image.url,
         header: page.featured_message_header[0].text,
-        body: page.featured_mesage_body[0].text
+        body: page.featured_mesage_body.map((body) => ({
+          text: body.text
+        }))
       },
       blockWidgets
     }

@@ -36,7 +36,7 @@ const colors = {
   cream: '#EEE8D4',
   tan: '#D9CEB5',
   khaki: "#C7B79F",
-  shadowNormal: '0 5px 10px 0 rgba(138, 155, 165, 0.15)',
+  shadowNormal: '0px 4px 4px rgba(0,0,0, .4)',
   shadowLight: '0 .5rem 1rem rgba(0,0,0,.15)',
   shadowDark: '0 0.33207px 2.21381px rgb(0 0 0 / 1%), 0 0.79801px 5.32008px rgb(0 0 0 / 3%)',
   extraLargeShadow: '0 0.33207px 2.21381px rgb(0 0 0 / 1%), 0 0.79801px 5.32008px rgb(0 0 0 / 3%), 0 1.50259px 10.0172px rgb(0 0 0 / 4%), 0 2.68036px 17.869px rgb(0 0 0 / 5%), 0 5.01331px 33.4221px rgb(0 0 0 / 6%), 0 12px 80px rgb(0 0 0 / 9%)'

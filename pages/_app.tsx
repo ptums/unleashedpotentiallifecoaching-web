@@ -2,7 +2,7 @@ import { AppProps } from 'next/app'
 import Head from 'next/head'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import Header from 'components/Header';
+import Header from 'components/shared/Header';
 import GlobalStyles from 'styles/global-styles'
 import theme from 'styles/theme'
 

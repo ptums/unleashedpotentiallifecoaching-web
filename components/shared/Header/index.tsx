@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Menu from 'components/Header/Menu'
+import Menu from 'components/shared/Header/Menu'
 
 const Header = () => (
   <HeaderContainer>

@@ -44,6 +44,8 @@ export const homePageQuery = async () => {
     allHome_pages {
       edges{
         node {
+          seo_title
+          seo_meta_description
           banner_line_one
           banner_line_two
           banner_background_image

@@ -75,6 +75,7 @@ const MenuWrapper = styled.ul`
     flex-direction: row;
     justify-content: center;
     text-align: center;
+    height: 48px;
   }
 
   li {
