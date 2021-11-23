@@ -21,8 +21,10 @@ const useOnClickOutside = (ref, handler) => {
 const Menu = () => {
   const [dropDown, setDropDown] = useState(false)
   const [mobileDropDown, setMobileDropDown] = useState(false)
-  const node = useRef(null)
-  useOnClickOutside(node, () => setDropDown(false))
+  const dropNode = useRef(null)
+  const mobileNode = useRef(null)  
+  useOnClickOutside(dropNode, () => setDropDown(false))
+  useOnClickOutside(mobileNode, () => setMobileDropDown(false))
 
   return (
     <nav>
@@ -34,7 +36,7 @@ const Menu = () => {
                 {nav.label}
               </button>
               {dropDown && (
-                <DropDown ref={node}>
+                <DropDown ref={dropNode}>
                   {nav.children.map((child) => (
                     <li key={child.id}>
                       <Link href={child.slug}>
