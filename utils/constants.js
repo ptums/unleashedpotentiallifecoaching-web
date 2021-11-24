@@ -26,7 +26,7 @@ export const SITE_NAVS = [
       },
       {
         id: 3,
-        slug: '/coach/che-greeff',
+        slug: '/coach/ché-greeff',
         label: 'Ché Greeff'
       }
     ]

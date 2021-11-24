@@ -22,7 +22,7 @@ const BannerContainer = styled.div<BannerContainerProps>`
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 768px;
+  height: 640px;
   border: 1px solid black;
 `
 

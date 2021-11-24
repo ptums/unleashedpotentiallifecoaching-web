@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { SITE_NAVS } from 'utils/constants'
+import { coachesQuery } from 'utils/api'
 
 const useOnClickOutside = (ref, handler) => {
   useEffect(() => {
@@ -21,10 +22,13 @@ const useOnClickOutside = (ref, handler) => {
 const Menu = () => {
   const [dropDown, setDropDown] = useState(false)
   const [mobileDropDown, setMobileDropDown] = useState(false)
+  const [coaches, setCoaches ] = useState([]);
   const dropNode = useRef(null)
-  const mobileNode = useRef(null)  
+  const mobileNode = useRef(null)
   useOnClickOutside(dropNode, () => setDropDown(false))
   useOnClickOutside(mobileNode, () => setMobileDropDown(false))
+
+
 
   return (
     <nav>
@@ -119,7 +123,6 @@ const DropDown = styled.ul`
   box-shadow: ${(props) => props.theme.colors.shadowNormal};
   margin: 0;
   padding: 0;
-  
 
   li {
     ${(props) => props.theme.fonts.xxxxl};

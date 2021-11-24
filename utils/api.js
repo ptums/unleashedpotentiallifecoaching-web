@@ -1,4 +1,5 @@
 import Prismic from 'prismic-javascript'
+import { homePageSchema, allCoachesSchema } from "utils/schemas"
 
 const REPOSITORY = process.env.PRISMIC_REPOSITORY_NAME
 const REF_API_URL = `https://${REPOSITORY}.cdn.prismic.io/api/v2`
@@ -40,31 +41,14 @@ const fetchAPI = async (query, { previewData, variables } = {}) => {
 
 /** Page Query */
 export const homePageQuery = async () => {
-  const query = `query{
-    allHome_pages {
-      edges{
-        node {
-          seo_title
-          seo_meta_description
-          banner_line_one
-          banner_line_two
-          banner_background_image
-          featured_image
-          featured_mesage_body
-          featured_message_header
-          block_widgets {
-            widget_description
-            widget_image
-            widget_title
-          }          
-        }
-      }
-    }
-  }`
-
-  const data = await fetchAPI(query);
+  const data = await fetchAPI(homePageSchema);
 
   return data.allHome_pages?.edges[0]?.node;
 }
 
-/** Coach Query */
+/** Coaches Query */
+export const coachesQuery = async () => {
+  const data = await fetchAPI(allCoachesSchema);
+
+  return data.allCoachs?.edges;
+}

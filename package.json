@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/UnleashedPotentialLifeCoaching/unleashedpotentiallifecoaching-web#readme",
   "dependencies": {
+    "@sendgrid/mail": "^7.6.0",
     "date-fns": "^2.26.0",
     "next": "^12.0.4",
     "prismic-javascript": "^3.0.2",

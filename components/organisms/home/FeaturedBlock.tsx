@@ -19,9 +19,13 @@ const FeaturedBlock: React.FC<FeaturdContent> = ({ imageUrl, header, body }: Fea
 
 const Block = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 64px;
+  flex-direction: column;
+  margin: 116px 32px;
+
+  @media(min-width: ${props => props.theme.breakpoints.lg}){
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `
 
 const ImageContainer = styled.div`
@@ -43,6 +47,11 @@ const TextContainer = styled.div`
     ${props => props.theme.fonts.xxxxxxl};
     font-family: ${props => props.theme.fonts.playFairDisplay};
     font-style: italic;
+    color: ${props => props.theme.colors.standardGreen};
+  }
+
+  p:not(:first-child) {
+    ${props => props.theme.fonts.xxxxxl};
     color: ${props => props.theme.colors.standardGreen};
   }
 `

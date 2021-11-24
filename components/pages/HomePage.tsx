@@ -1,27 +1,39 @@
-import React from "react";
-import SiteHead from "components/shared/SiteHead"
-import Main from "layouts/Main"
-import HomeBanner from "components/organisms/home/HomeBanner"
-import FeaturedBlock from "components/organisms/home/FeaturedBlock";
-import { Banner, FeaturdContent, BlockWidget } from "types/Home";
-import { Seo } from "types/SEO";
+import React from 'react'
+import SiteHead from 'components/shared/SiteHead'
+import Container from 'layouts/Container'
+import HomeBanner from 'components/organisms/home/HomeBanner'
+import FeaturedBlock from 'components/organisms/home/FeaturedBlock'
+import CoachesBanner from 'components/organisms/home/CoachesBanner'
+import { Banner, FeaturdContent, BlockWidget } from 'types/Home'
+import { Seo } from 'types/SEO'
+import { Coach } from 'types/Coach'
 
 interface Props {
-  banner: Banner,
-  featuredContent: FeaturdContent,
-  blockWidgets: BlockWidget[],
+  banner: Banner
+  featuredContent: FeaturdContent
+  blockWidgets: BlockWidget[]
   seo: Seo
+  coaches: Coach[]
 }
 
-const HomePage: React.FC<Props> = ({ banner, featuredContent, blockWidgets, seo }: Props) => {
+const HomePage: React.FC<Props> = ({
+  banner,
+  featuredContent,
+  blockWidgets,
+  seo,
+  coaches,
+}: Props) => {
   return (
     <>
       <SiteHead {...seo} />
-      <HomeBanner {...banner} /> 
-      <Main>
-        <FeaturedBlock {...featuredContent} />
-      </Main>
+      <main>
+        <HomeBanner {...banner} />
+        <Container>
+          <FeaturedBlock {...featuredContent} />
+        </Container>
+        <CoachesBanner coaches={coaches} />
+      </main>
     </>
   )
 }
-export default HomePage;
+export default HomePage

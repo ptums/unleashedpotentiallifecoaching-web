@@ -5,15 +5,15 @@ interface Props {
   children: React.ReactNode
 }
 
-const Main: React.FC<Props> = ({ children }: Props) => {
+const Container: React.FC<Props> = ({ children }: Props) => {
   return (
-    <MainContainer>
+    <ContainerLayout>
       {children}
-    </MainContainer>
+    </ContainerLayout>
   )
 }
 
-const MainContainer = styled.main`
+const ContainerLayout = styled.div`
   max-width: 100%;
   margin: 0 auto;
 
@@ -22,4 +22,4 @@ const MainContainer = styled.main`
   }
 `
 
-export default Main
+export default Container
