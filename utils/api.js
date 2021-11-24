@@ -27,7 +27,7 @@ const fetchAPI = async (query, { previewData, variables } = {}) => {
   )
 
   if (res.status !== 200) {
-    console.log(await res.text())
+    console.error(await res.text())
     throw new Error('Failed to fetch API')
   }
 

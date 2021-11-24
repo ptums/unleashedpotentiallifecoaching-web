@@ -11,7 +11,7 @@ const FeaturedBlock: React.FC<FeaturdContent> = ({ imageUrl, header, body }: Fea
         {body.map((child) => <p key={child.text}>{child.text}</p>)}
       </TextContainer>
       <ImageContainer>
-        <Image src={imageUrl} alt="Unleashed Potential" width={283} height={283} layout="fixed" />
+        <Image src={imageUrl} alt="Unleashed Potential" width={450} height={450} layout="intrinsic" />
       </ImageContainer>
     </Block>
   )

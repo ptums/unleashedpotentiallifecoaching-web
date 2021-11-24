@@ -16,8 +16,6 @@ const CoachProfile: React.FC<Props> = ({ coach, slug }: Props) => {
     return <ErrorPage statusCode={404} />
   }
 
-  console.log(coach);
-
   return <>Coach will go here..</>
 }
 
