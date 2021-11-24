@@ -22,7 +22,6 @@ Our coaching is done virtually. We've found that meeting online allows for conve
 
 
 ## TO DOS
-- Finish Home page
 - Build out Footer/Contact 
 - Build out coach page
 - Build out service page
@@ -32,3 +31,4 @@ Our coaching is done virtually. We've found that meeting online allows for conve
 - Build out Twilio Email APIs
 - Mobile Menu/Mobile Review
 - Bring over JSON LD Schemas
+- Touch ups/Fix Husky config

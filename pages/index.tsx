@@ -11,19 +11,26 @@ interface Props {
   banner: Banner
   featuredContent: FeaturdContent
   blockWidgets: BlockWidget[]
-  seo: Seo,
-  coaches: Coach[],
+  seo: Seo
+  coaches: Coach[]
   featuredReview: Review
 }
 
-const Home: React.FC<Props> = ({ banner, featuredContent, blockWidgets, seo, coaches, featuredReview }: Props) => {  
+const Home: React.FC<Props> = ({
+  banner,
+  featuredContent,
+  blockWidgets,
+  seo,
+  coaches,
+  featuredReview,
+}: Props) => {
   const HomePageProps = {
     banner,
     featuredContent,
     blockWidgets,
     seo,
     coaches,
-    featuredReview
+    featuredReview,
   }
   return <HomePage {...HomePageProps} />
 }
@@ -31,13 +38,13 @@ const Home: React.FC<Props> = ({ banner, featuredContent, blockWidgets, seo, coa
 export const getStaticProps: GetStaticProps = async () => {
   const page = await homePageQuery()
   const coachesRequest = await coachesQuery()
-  const reviews = await reviewsQuery();
+  const reviews = await reviewsQuery()
   const blockWidgets = page.block_widgets.map((block, index) => ({
     id: index,
     description: block.widget_description[0].text,
     title: block.widget_title[0].text,
     imageUrl: block.widget_image.url,
-  }));
+  }))
 
   const coaches = coachesRequest.map((coach, index) => ({
     id: index,
@@ -53,14 +60,15 @@ export const getStaticProps: GetStaticProps = async () => {
     },
     welcomeMessage: coach.node.welcome_message.map(({ text }) => text),
     biography: coach.node.biography.map(({ text }) => text),
-  }));
+  }))
 
-  const featuredReview = reviews.filter((review) => review.node.featured === true)
+  const featuredReview = reviews
+    .filter((review) => review.node.featured === true)
     .map(({ node }) => ({
       featured: node.featured,
       name: node.name.map(({ text }) => text)[0],
       quote: node.quote.map(({ text }) => text)[0],
-    }))[0];
+    }))[0]
 
   return {
     props: {
@@ -82,7 +90,7 @@ export const getStaticProps: GetStaticProps = async () => {
       },
       blockWidgets,
       coaches,
-      featuredReview
+      featuredReview,
     },
   }
 }

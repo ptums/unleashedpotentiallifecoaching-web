@@ -1,26 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Coach } from 'types/Coach'
-import CoachCard from '~/components/molecules/CoachCard'
+import CoachCard from 'components/molecules/CoachCard'
+import DarkGreenContainer from 'layouts/DarkGreenContainer'
 
 interface Props {
   coaches: Coach[]
 }
 const CoachesBanner: React.FC<Props> = ({ coaches }: Props) => {
   return (
-    <Block>
+    <DarkGreenContainer>
       <Title>Take the first step</Title>
       <CoachesContainer>
         {coaches.map((coach) => <CoachCard key={coach.id} {...coach} />)}
       </CoachesContainer>
-    </Block>
+    </DarkGreenContainer>
   )
 }
-
-const Block = styled.div`
-  padding: 8px 0;
-  background-color: ${props => props.theme.colors.standardGreen};  
-`
 
 const Title = styled.p`
   ${props => props.theme.fonts.xxxxxxxxl};
