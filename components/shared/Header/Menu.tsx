@@ -2,7 +2,6 @@ import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { SITE_NAVS } from 'utils/constants'
-import { coachesQuery } from 'utils/api'
 
 const useOnClickOutside = (ref, handler) => {
   useEffect(() => {
@@ -20,11 +19,10 @@ const useOnClickOutside = (ref, handler) => {
 }
 
 const Menu = () => {
-  const [dropDown, setDropDown] = useState(false)
-  const [mobileDropDown, setMobileDropDown] = useState(false)
-  const [coaches, setCoaches ] = useState([]);
-  const dropNode = useRef(null)
-  const mobileNode = useRef(null)
+  const [dropDown, setDropDown] = useState<boolean>(false)
+  const [mobileDropDown, setMobileDropDown] = useState<boolean>(false)
+  const dropNode = useRef<HTMLUListElement>(null)
+  const mobileNode = useRef<HTMLDivElement>(null)
   useOnClickOutside(dropNode, () => setDropDown(false))
   useOnClickOutside(mobileNode, () => setMobileDropDown(false))
 
@@ -74,7 +72,6 @@ const MenuWrapper = styled.ul`
   display: none;
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     min-width: 500px;
-    margin: 20px 0;
     display: flex;
     flex-direction: row;
     justify-content: center;

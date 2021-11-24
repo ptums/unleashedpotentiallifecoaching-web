@@ -18,7 +18,6 @@ const CoachesBanner: React.FC<Props> = ({ coaches }: Props) => {
 }
 
 const Block = styled.div`
-  margin: 64px 0;
   padding: 8px 0;
   background-color: ${props => props.theme.colors.standardGreen};  
 `

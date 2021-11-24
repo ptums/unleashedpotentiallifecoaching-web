@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import styled from 'styled-components'
+import ImageWrapper from 'components/atoms/ImageWrapper'
 import { FeaturdContent } from 'types/Home'
 
 const FeaturedBlock: React.FC<FeaturdContent> = ({ imageUrl, header, body }: FeaturdContent) => {
@@ -8,11 +9,11 @@ const FeaturedBlock: React.FC<FeaturdContent> = ({ imageUrl, header, body }: Fea
     <Block>
       <TextContainer>
         <p>{header}</p>
-        {body.map((child) => <p key={child.text}>{child.text}</p>)}
+        {body.map((child) => (
+          <p key={child.text}>{child.text}</p>
+        ))}
       </TextContainer>
-      <ImageContainer>
-        <Image src={imageUrl} alt="Unleashed Potential" width={450} height={450} layout="intrinsic" />
-      </ImageContainer>
+      <ImageWrapper src={imageUrl} width={450} height={450} alt="Unleashed Potential" />
     </Block>
   )
 }
@@ -20,39 +21,28 @@ const FeaturedBlock: React.FC<FeaturdContent> = ({ imageUrl, header, body }: Fea
 const Block = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 116px 32px;
+  margin: 116px 0;
 
-  @media(min-width: ${props => props.theme.breakpoints.lg}){
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     flex-direction: row;
     justify-content: space-between;
   }
 `
 
-const ImageContainer = styled.div`
-  span {
-    img {
-      transition: all 0.2s;
-
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
-  }
-`
 const TextContainer = styled.div`
   text-align: center;
   max-width: 600px;
 
   p:first-child {
-    ${props => props.theme.fonts.xxxxxxl};
-    font-family: ${props => props.theme.fonts.playFairDisplay};
+    ${(props) => props.theme.fonts.xxxxxxl};
+    font-family: ${(props) => props.theme.fonts.playFairDisplay};
     font-style: italic;
-    color: ${props => props.theme.colors.standardGreen};
+    color: ${(props) => props.theme.colors.standardGreen};
   }
 
   p:not(:first-child) {
-    ${props => props.theme.fonts.xxxxxl};
-    color: ${props => props.theme.colors.standardGreen};
+    ${(props) => props.theme.fonts.xxxxxl};
+    color: ${(props) => props.theme.colors.standardGreen};
   }
 `
 

@@ -46,7 +46,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       coach: coachData,
       slug: params.slug
     },
-    revalidate: 10
+    revalidate: 60*3
   }
 }
 

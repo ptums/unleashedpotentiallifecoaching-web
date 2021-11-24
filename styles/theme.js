@@ -10,6 +10,7 @@ const fonts = {
   xxxxl: 'font-size: 2.25rem; line-height: 2.5rem',
   xxxxxl: 'font-size: 3rem; line-height: 1.3',
   xxxxxxl: 'font-size: 3.75rem; line-height: 1.1',
+  xxxxxxlwide: 'font-size: 3.75rem; line-height: 1.3',
   xxxxxxxl: 'font-size: 4.5rem; line-height: 1',
   xxxxxxxxl: 'font-size: 6rem; line-height: 1',
   xxxxxxxxxl: 'font-size: 8rem; line-height: 1',

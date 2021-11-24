@@ -4,6 +4,7 @@ import Container from 'layouts/Container'
 import HomeBanner from 'components/organisms/home/HomeBanner'
 import FeaturedBlock from 'components/organisms/home/FeaturedBlock'
 import CoachesBanner from 'components/organisms/home/CoachesBanner'
+import WidgetsContainer from 'components/organisms/home/WidgetsContainer'
 import { Banner, FeaturdContent, BlockWidget } from 'types/Home'
 import { Seo } from 'types/SEO'
 import { Coach } from 'types/Coach'
@@ -23,6 +24,7 @@ const HomePage: React.FC<Props> = ({
   seo,
   coaches,
 }: Props) => {
+
   return (
     <>
       <SiteHead {...seo} />
@@ -32,6 +34,9 @@ const HomePage: React.FC<Props> = ({
           <FeaturedBlock {...featuredContent} />
         </Container>
         <CoachesBanner coaches={coaches} />
+        <Container>
+          <WidgetsContainer widgets={blockWidgets} />
+        </Container>
       </main>
     </>
   )

@@ -13,7 +13,7 @@ export interface FeaturdContent {
 }
 
 export interface BlockWidget {
-  id: number;
+  id?: number;
   description: string;
   title: string;
   imageUrl: string | null

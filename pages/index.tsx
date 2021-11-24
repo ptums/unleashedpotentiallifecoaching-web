@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps = async () => {
     id: index,
     description: block.widget_description[0].text,
     title: block.widget_title[0].text,
-    imageUrl: block.widget_image,
+    imageUrl: block.widget_image.url,
   }));
 
   const coaches = coachesRequest.map((coach, index) => ({
