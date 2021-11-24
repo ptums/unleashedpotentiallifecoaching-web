@@ -8,6 +8,8 @@ import WidgetsContainer from 'components/organisms/home/WidgetsContainer'
 import { Banner, FeaturdContent, BlockWidget } from 'types/Home'
 import { Seo } from 'types/SEO'
 import { Coach } from 'types/Coach'
+import { Review } from 'types/Review'
+import FooterReview from 'components/shared/FooterReview'
 
 interface Props {
   banner: Banner
@@ -15,6 +17,7 @@ interface Props {
   blockWidgets: BlockWidget[]
   seo: Seo
   coaches: Coach[]
+  featuredReview: Review
 }
 
 const HomePage: React.FC<Props> = ({
@@ -23,6 +26,7 @@ const HomePage: React.FC<Props> = ({
   blockWidgets,
   seo,
   coaches,
+  featuredReview
 }: Props) => {
 
   return (
@@ -37,6 +41,7 @@ const HomePage: React.FC<Props> = ({
         <Container>
           <WidgetsContainer widgets={blockWidgets} />
         </Container>
+        <FooterReview {...featuredReview} />
       </main>
     </>
   )

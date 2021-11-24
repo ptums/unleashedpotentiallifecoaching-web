@@ -1,26 +1,29 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
 import HomePage from 'components/pages/HomePage'
-import { homePageQuery, coachesQuery } from 'utils/api'
+import { homePageQuery, coachesQuery, reviewsQuery } from 'utils/api'
 import { Banner, FeaturdContent, BlockWidget } from 'types/Home'
 import { Seo } from 'types/SEO'
 import { Coach } from 'types/Coach'
+import { Review } from 'types/Review'
 
 interface Props {
   banner: Banner
   featuredContent: FeaturdContent
   blockWidgets: BlockWidget[]
   seo: Seo,
-  coaches: Coach[]
+  coaches: Coach[],
+  featuredReview: Review
 }
 
-const Home: React.FC<Props> = ({ banner, featuredContent, blockWidgets, seo, coaches }: Props) => {  
+const Home: React.FC<Props> = ({ banner, featuredContent, blockWidgets, seo, coaches, featuredReview }: Props) => {  
   const HomePageProps = {
     banner,
     featuredContent,
     blockWidgets,
     seo,
-    coaches
+    coaches,
+    featuredReview
   }
   return <HomePage {...HomePageProps} />
 }
@@ -28,6 +31,7 @@ const Home: React.FC<Props> = ({ banner, featuredContent, blockWidgets, seo, coa
 export const getStaticProps: GetStaticProps = async () => {
   const page = await homePageQuery()
   const coachesRequest = await coachesQuery()
+  const reviews = await reviewsQuery();
   const blockWidgets = page.block_widgets.map((block, index) => ({
     id: index,
     description: block.widget_description[0].text,
@@ -51,6 +55,13 @@ export const getStaticProps: GetStaticProps = async () => {
     biography: coach.node.biography.map(({ text }) => text),
   }));
 
+  const featuredReview = reviews.filter((review) => review.node.featured === true)
+    .map(({ node }) => ({
+      featured: node.featured,
+      name: node.name.map(({ text }) => text)[0],
+      quote: node.quote.map(({ text }) => text)[0],
+    }))[0];
+
   return {
     props: {
       seo: {
@@ -70,7 +81,8 @@ export const getStaticProps: GetStaticProps = async () => {
         })),
       },
       blockWidgets,
-      coaches
+      coaches,
+      featuredReview
     },
   }
 }

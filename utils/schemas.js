@@ -13,6 +13,18 @@ export const allCoachesSchema = `query{
   }
 }`;
 
+export const allReviewsSchema = `query{
+  allReviewss{
+    edges{
+      node{
+        featured
+        name
+        quote
+      }
+    }
+  }
+}`
+
 export const homePageSchema = `query{
   allHome_pages {
     edges{
