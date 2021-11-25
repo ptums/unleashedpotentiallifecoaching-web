@@ -29,11 +29,13 @@ const Widget = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 88px;
+  padding: 16px;
 
   @media(min-width:${props => props.theme.breakpoints.lg}) {
     flex-direction: row;
     justify-content:space-between;
-
+    padding: 0;
+    
     &:nth-child(2n) {
       flex-direction: row-reverse;
       justify-content:space-between;
