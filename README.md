@@ -20,15 +20,14 @@ Our coaching is done virtually. We've found that meeting online allows for conve
 - [Twilio/Send Grid](https://www.twilio.com/sendgrid/email-api)
 - [GraphQL](https://graphql.org/)
 
-
 ## TO DOS
-- Build out Footer/Contact 
+
 - Build out coach page
 - Build out service page
 - Build out Our Story Page
 - Build out Reviews Page
 - Build out 2x Coach Booking Cards
-- Build out Twilio Email APIs
+- Build out Twilio Email APIs and Footer functionality
 - Mobile Menu/Mobile Review
 - Bring over JSON LD Schemas
 - Touch ups/Fix Husky config
