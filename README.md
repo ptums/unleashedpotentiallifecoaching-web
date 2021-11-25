@@ -31,3 +31,4 @@ Our coaching is done virtually. We've found that meeting online allows for conve
 - Mobile Menu/Mobile Review
 - Bring over JSON LD Schemas
 - Touch ups/Fix Husky config
+- Add additional photo fields to coach in prismic

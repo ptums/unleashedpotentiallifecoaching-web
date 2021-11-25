@@ -1,13 +1,14 @@
-import React from 'react'
-import { GetStaticProps, GetStaticPaths } from 'next'
-import { useRouter } from 'next/router'
+import CoachPage from 'components/pages/CoachPage'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import ErrorPage from 'next/error'
-import { coachesQuery } from 'utils/api'
+import { useRouter } from 'next/router'
+import React from 'react'
 import { Coach } from 'types/Coach'
+import { coachesQuery } from 'utils/api'
 import { urlify } from 'utils/helpers'
 interface Props {
-  coach: Coach;
-  slug: string;
+  coach: Coach
+  slug: string
 }
 
 const CoachProfile: React.FC<Props> = ({ coach, slug }: Props) => {
@@ -16,14 +17,12 @@ const CoachProfile: React.FC<Props> = ({ coach, slug }: Props) => {
     return <ErrorPage statusCode={404} />
   }
 
-  return <>Coach will go here..</>
+  return <CoachPage {...coach} />
 }
-
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const request = await coachesQuery()
-
-  const coach = request.filter((coach) => urlify(coach.node.name[0].text) === params.slug)[0];
+  const coach = request.filter((coach) => urlify(coach.node.name[0].text) === params.slug)[0]
 
   const coachData = {
     seo: {
@@ -32,35 +31,35 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
     name: coach.node.name[0].text,
     image: {
-      url: coach.node.profile_image.url,
+      src: coach.node.profile_image.url,
       width: coach.node.profile_image.dimensions.width,
       height: coach.node.profile_image.dimensions.height,
+      alt: coach.node.name[0].text,
     },
     welcomeMessage: coach.node.welcome_message.map(({ text }) => text),
     biography: coach.node.biography.map(({ text }) => text),
   }
 
-
   return {
     props: {
       coach: coachData,
-      slug: params.slug
+      slug: params.slug,
     },
-    revalidate: 60*3
+    revalidate: 60 * 3,
   }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const request = await coachesQuery()
-  const coachUrls =  request.map((coach) => ({
+  const coachUrls = request.map((coach) => ({
     params: {
-      slug: urlify(coach.node.name[0].text)
+      slug: urlify(coach.node.name[0].text),
     },
-  }));
+  }))
 
   return {
     paths: coachUrls,
-    fallback: false,
+    fallback: 'blocking',
   }
 }
 

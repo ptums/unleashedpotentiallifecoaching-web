@@ -8,6 +8,7 @@ const fonts = {
   xxl: 'font-size: 1.5rem; line-height: 2rem',
   xxxl: 'font-size: 1.875rem; line-height: 2.25rem',
   xxxxl: 'font-size: 2.25rem; line-height: 2.5rem',
+  xxxxlwide: 'font-size: 2.25rem; line-height: 3rem',
   xxxxxl: 'font-size: 3rem; line-height: 1.3',
   xxxxxlwide: 'font-size: 3rem; line-height: 1.8',
   xxxxxxl: 'font-size: 3.75rem; line-height: 1.1',

@@ -1,14 +1,15 @@
-import { Seo } from "./SEO";
+import { Seo } from './SEO'
 
 export interface Coach {
-  id?: number;
-  seo?: Seo;
-  name: string;
+  id?: number
+  seo?: Seo
+  name: string
   image: {
-    url: string;
-    width: string | number;
-    height: string | number;
+    src: string
+    width: string | number
+    height: string | number
+    alt?: string
   }
-  welcomeMessage?: string[];
-  biography?: string[];
+  welcomeMessage?: string[]
+  biography?: string[]
 }

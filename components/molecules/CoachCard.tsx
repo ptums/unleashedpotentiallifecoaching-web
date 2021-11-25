@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
-import styled from 'styled-components'
 import ImageWrapper from 'components/atoms/ImageWrapper'
+import Link from 'next/link'
+import React from 'react'
+import styled from 'styled-components'
 import { Coach } from 'types/Coach'
 import { urlify } from 'utils/helpers'
 
@@ -11,7 +11,7 @@ const CoachCard: React.FC<Coach> = ({ name, image }: Coach) => {
     <Card>
       <Link href={coachUrl}>
         <a>
-          <ImageWrapper src={image.url} width={image.width} height={image.height} alt={name} />
+          <ImageWrapper {...image} alt={name} />
           <Details>
             <Time>1 hour coaching with</Time>
             <Name>{name}</Name>

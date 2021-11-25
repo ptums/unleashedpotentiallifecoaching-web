@@ -26,8 +26,6 @@ const Menu = () => {
   useOnClickOutside(dropNode, () => setDropDown(false))
   useOnClickOutside(mobileNode, () => setMobileDropDown(false))
 
-
-
   return (
     <nav>
       <MenuWrapper>
@@ -120,6 +118,7 @@ const DropDown = styled.ul`
   box-shadow: ${(props) => props.theme.colors.shadowNormal};
   margin: 0;
   padding: 0;
+  z-index: 99;
 
   li {
     ${(props) => props.theme.fonts.xxxxl};

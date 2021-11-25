@@ -1,3 +1,4 @@
+import Button from 'components/atoms/Button'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
@@ -7,9 +8,10 @@ const Form = () => {
   const [subject, setSubject] = useState<string>('')
   const [message, setMessage] = useState<string>('')
 
-  const handleSubmit = (e) => {e
+  const handleSubmit = (e) => {
+    e
     e.preventDefault()
-    
+
     const data = {
       fullName,
       email,
@@ -17,7 +19,7 @@ const Form = () => {
       message,
     }
 
-    console.log(data);
+    console.log(data)
   }
 
   return (
@@ -65,7 +67,9 @@ const Form = () => {
           placeholder="Message"
         ></TextArea>
       </Label>
-      <Button onClick={(e) => handleSubmit(e)}>Send</Button>
+      <Button btnPadding="8px 24px" handleClick={handleSubmit}>
+        Send
+      </Button>
     </FormWrapper>
   )
 }
@@ -111,24 +115,6 @@ const TextArea = styled.textarea`
   color: ${(props) => props.theme.colors.standardGreen};
   font-family: ${(props) => props.theme.fonts.lato};
   min-height: 300px;
-`
-
-const Button = styled.button`
-  margin: 8px 24px;
-  border: 0;
-  outline: 0;
-  padding: 8px 24px;
-  ${(props) => props.theme.fonts.xxxxxl};
-  color: ${(props) => props.theme.colors.white};
-  background-color: ${(props) => props.theme.colors.darkGreen};
-  transition: all 0.2s;
-  border-radius: 8px;
-
-  &:hover {
-    background-color: ${(props) => props.theme.colors.standardGreen};
-    cursor: pointer;
-    box-shadow: ${(props) => props.theme.colors.shadowLight};
-  }
 `
 
 export default Form
