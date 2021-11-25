@@ -1,11 +1,11 @@
-import React from 'react'
-import { GetStaticProps } from 'next'
 import HomePage from 'components/pages/HomePage'
-import { homePageQuery, coachesQuery, reviewsQuery } from 'utils/api'
-import { Banner, FeaturdContent, BlockWidget } from 'types/Home'
-import { Seo } from 'types/SEO'
+import { GetStaticProps } from 'next'
+import React from 'react'
 import { Coach } from 'types/Coach'
+import { Banner, BlockWidget, FeaturdContent } from 'types/Home'
 import { Review } from 'types/Review'
+import { Seo } from 'types/SEO'
+import { coachesQuery, homePageQuery, reviewsQuery } from 'utils/api'
 
 interface Props {
   banner: Banner
@@ -46,21 +46,30 @@ export const getStaticProps: GetStaticProps = async () => {
     imageUrl: block.widget_image.url,
   }))
 
-  const coaches = coachesRequest.map((coach, index) => ({
-    id: index,
-    seo: {
-      title: coach.node.seo_title[0].text,
-      metaDescription: coach.node.seo_meta_description[0].text,
-    },
-    name: coach.node.name[0].text,
-    image: {
-      url: coach.node.profile_image.url,
-      width: coach.node.profile_image.dimensions.width,
-      height: coach.node.profile_image.dimensions.height,
-    },
-    welcomeMessage: coach.node.welcome_message.map(({ text }) => text),
-    biography: coach.node.biography.map(({ text }) => text),
-  }))
+  console.log('coach')
+  console.log('=======')
+
+  const coaches = coachesRequest
+    .map(({ node }) => ({
+      id: node.appearance_order,
+      name: node.name[0].text,
+      image: node.book_time_photo
+        ? {
+            src: node.book_time_photo.url,
+            width: node.book_time_photo.dimensions.width,
+            height: node.book_time_photo.dimensions.height,
+            alt: node.name[0].text,
+          }
+        : {
+            src: node.profile_image.url,
+            width: node.profile_image.dimensions.width,
+            height: node.profile_image.dimensions.height,
+            alt: node.name[0].text,
+          },
+    }))
+    .sort((a, b) => (a.id > b.id ? 1 : -1))
+
+  console.log(coaches)
 
   const featuredReview = reviews
     .filter((review) => review.node.featured === true)

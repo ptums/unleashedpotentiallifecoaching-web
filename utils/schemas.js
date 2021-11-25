@@ -8,10 +8,12 @@ export const allCoachesSchema = `query{
         profile_image
         welcome_message
         biography
+        book_time_photo
+        appearance_order
       }
     }
   }
-}`;
+}`
 
 export const allReviewsSchema = `query{
   allReviewss{
