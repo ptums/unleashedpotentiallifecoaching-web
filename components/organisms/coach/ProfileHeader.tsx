@@ -66,7 +66,7 @@ const Details = styled.div`
 
   p {
     color: ${(props) => props.theme.colors.standardGreen};
-    ${(props) => props.theme.fonts.xxxxl};
+    ${(props) => props.theme.fonts.xxxxxl};
     margin-top: 0;
   }
 `

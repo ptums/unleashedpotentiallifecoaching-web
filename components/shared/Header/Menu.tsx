@@ -83,6 +83,7 @@ const MenuWrapper = styled.ul`
     justify-content: center;
     text-align: center;
     height: 32px;
+    margin-top: 16px;
   }
 
   li {
@@ -121,7 +122,7 @@ const MenuWrapper = styled.ul`
 const DropDown = styled.ul`
   background-color: ${(props) => props.theme.colors.gray};
   position: absolute;
-  min-width: 240px;
+  min-width: 160px;
   border-radius: 4px;
   box-shadow: ${(props) => props.theme.colors.shadowNormal};
   margin: 0;

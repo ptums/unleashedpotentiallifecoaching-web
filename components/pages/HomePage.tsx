@@ -6,6 +6,7 @@ import FooterReview from 'components/shared/FooterReview'
 import SiteHead from 'components/shared/SiteHead'
 import Container from 'layouts/Container'
 import React from 'react'
+import styled from 'styled-components'
 import { Coach } from 'types/Coach'
 import { Banner, BlockWidget, FeaturdContent } from 'types/Home'
 import { Review } from 'types/Review'
@@ -31,7 +32,7 @@ const HomePage: React.FC<Props> = ({
   return (
     <>
       <SiteHead {...seo} />
-      <main>
+      <Page>
         <HomeBanner {...banner} />
         <Container>
           <FeaturedBlock {...featuredContent} />
@@ -41,8 +42,13 @@ const HomePage: React.FC<Props> = ({
           <WidgetsContainer widgets={blockWidgets} />
         </Container>
         <FooterReview {...featuredReview} />
-      </main>
+      </Page>
     </>
   )
 }
+
+const Page = styled.main`
+  position: relative;
+  top: -8px;
+`
 export default HomePage

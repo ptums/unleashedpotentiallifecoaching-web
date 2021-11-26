@@ -1,5 +1,11 @@
 import { RichTextBlock } from 'prismic-reactjs'
 
-export interface Services {
-  services: RichTextBlock[]
+import { Seo } from './SEO'
+
+export interface TServices {
+  page_blocks: {
+    content: RichTextBlock[]
+    title: RichTextBlock[]
+  }[]
+  seo: Seo
 }

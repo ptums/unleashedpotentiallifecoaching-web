@@ -51,8 +51,10 @@ export const homePageSchema = `query{
 
 export const allServicesQuery = `query{
   allServicess{
-    edges{
+    edges {
       node{
+        seo_title
+        seo_meta_description
         page_blocks {
           title
           content

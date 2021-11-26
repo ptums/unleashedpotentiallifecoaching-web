@@ -8,7 +8,8 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     width: auto;
     font-family: ${theme.fonts.lato};
-    font-size: 9px;
+    background-color: ${props => props.theme.colors.white};
+    font-size: 8px;
   }
   
   .fade-in {

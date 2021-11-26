@@ -7,6 +7,9 @@ interface Props {
   name: string
   image: {
     src: string
+    alt: string
+    height: string | number
+    width: string | number
   }
   handleClick: (e: MouseEvent<HTMLButtonElement>) => void
 }

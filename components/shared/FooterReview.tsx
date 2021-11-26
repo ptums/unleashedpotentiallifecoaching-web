@@ -12,7 +12,7 @@ const FooterReview: React.FC<Review> = ({ name, quote }: Review) => {
         <Message>
           <RichText render={quote} />
         </Message>
-        <Name>
+        <Name id="contact">
           - <RichText render={name} />
         </Name>
       </MessageContainer>

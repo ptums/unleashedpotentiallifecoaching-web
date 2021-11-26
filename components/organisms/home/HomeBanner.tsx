@@ -18,21 +18,17 @@ interface BannerContainerProps {
 }
 const BannerContainer = styled.div<BannerContainerProps>`
   background: url(${({ image }) => image}) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
-  height: 640px;
-  border: 1px solid black;
+  height: 720px;
 `
 
 const BannerText = styled.div`
+  display: flex;
+  flex-direction: column;
+  algin-items: center;
+  justify-content: center;
   text-align: center;
-  margin: 42px;
-
-  @media (min-width: ${props => props.theme.breakpoints.lg}){
-    margin: 27em auto;
-  }
+  min-height: 640px;
 
   h1 {
     ${(props) => props.theme.fonts.xxxxxxxxxl};
@@ -45,8 +41,8 @@ const BannerText = styled.div`
 
   h2 {
     ${(props) => props.theme.fonts.xxxxxxxxxl};
-    color: ${props => props.theme.colors.white};
-    text-shadow: ${(props) => props.theme.colors.shadowNormal};    
+    color: ${(props) => props.theme.colors.white};
+    text-shadow: ${(props) => props.theme.colors.shadowNormal};
     margin: 0;
     padding: 0;
     font-family: ${(props) => props.theme.fonts.playFairDisplay};

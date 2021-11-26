@@ -28,4 +28,3 @@ Our coaching is done virtually. We've found that meeting online allows for conve
 - Build out Twilio Email APIs and Footer functionality
 - Mobile Menu/Mobile Review
 - Bring over JSON LD Schemas
-- Looking in text formatting based on Prismic fields
