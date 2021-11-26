@@ -1,5 +1,6 @@
 import Button from 'components/atoms/Button'
 import ImageWrapper from 'components/atoms/ImageWrapper'
+import { RichText, RichTextBlock } from 'prismic-reactjs'
 import React, { MouseEvent } from 'react'
 import styled from 'styled-components'
 
@@ -11,7 +12,7 @@ interface Props {
     height: string | number
     alt: string
   }
-  welcomeMessage?: string[]
+  welcomeMessage?: RichTextBlock[]
   handleClick: (e: MouseEvent<HTMLButtonElement>) => void
 }
 
@@ -23,7 +24,7 @@ const ProfileHeader: React.FC<Props> = ({ name, image, welcomeMessage, handleCli
       <ImageWrapper {...image} />
       <Details>
         <h1>Hi, I&apos;m {firstName}</h1>
-        <p>{welcomeMessage}</p>
+        <RichText render={welcomeMessage} />
         <BtnWrapper>
           <Button btnPadding="16px 64px" handleClick={handleClick}>
             Book
@@ -66,6 +67,7 @@ const Details = styled.div`
   p {
     color: ${(props) => props.theme.colors.standardGreen};
     ${(props) => props.theme.fonts.xxxxl};
+    margin-top: 0;
   }
 `
 

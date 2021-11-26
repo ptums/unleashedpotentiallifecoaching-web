@@ -6,7 +6,14 @@ import Container from 'layouts/Container'
 import React from 'react'
 import { Coach } from 'types/Coach'
 
-const CoachPage: React.FC<Coach> = ({ seo, name, image, welcomeMessage, biography }: Coach) => {
+const CoachPage: React.FC<Coach> = ({
+  seo,
+  name,
+  image,
+  bookTimeImage,
+  welcomeMessage,
+  biography,
+}: Coach) => {
   const handleBooking = (e) => {
     e.preventDefault()
 
@@ -24,7 +31,7 @@ const CoachPage: React.FC<Coach> = ({ seo, name, image, welcomeMessage, biograph
           welcomeMessage={welcomeMessage}
         />
         <Biography biography={biography} />
-        <ProfileCard name={name} image={image} handleClick={handleBooking} />
+        <ProfileCard name={name} image={bookTimeImage} handleClick={handleBooking} />
       </Container>
     </>
   )

@@ -25,6 +25,7 @@ const Menu = () => {
   const mobileNode = useRef<HTMLDivElement>(null)
   useOnClickOutside(dropNode, () => setDropDown(false))
   useOnClickOutside(mobileNode, () => setMobileDropDown(false))
+  const handleDropDown = () => setDropDown(!dropDown)
 
   return (
     <nav>
@@ -32,16 +33,23 @@ const Menu = () => {
         {SITE_NAVS.map((nav) =>
           nav.slug === null ? (
             <li key={nav.id}>
-              <button aria-label="Coaches" onClick={() => setDropDown(!dropDown)}>
+              <button aria-label="Coaches" onClick={handleDropDown}>
                 {nav.label}
               </button>
               {dropDown && (
                 <DropDown ref={dropNode}>
-                  {nav.children.map((child) => (
+                  {nav.children.map((child, index) => (
                     <li key={child.id}>
-                      <Link href={child.slug}>
-                        <a>{child.label}</a>
-                      </Link>
+                      <div
+                        tabIndex={index}
+                        onKeyPress={handleDropDown}
+                        onClick={handleDropDown}
+                        role="button"
+                      >
+                        <Link href={child.slug}>
+                          <a>{child.label}</a>
+                        </Link>
+                      </div>
                     </li>
                   ))}
                 </DropDown>

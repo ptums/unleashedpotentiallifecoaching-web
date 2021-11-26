@@ -1,6 +1,6 @@
+import RowWidget from 'components/molecules/RowWidget'
 import React from 'react'
 import styled from 'styled-components'
-import RowWidget from 'components/molecules/RowWidget'
 import { BlockWidget } from 'types/Home'
 
 interface Props {
@@ -9,7 +9,9 @@ interface Props {
 const WidgetsContainer: React.FC<Props> = ({ widgets }: Props) => {
   return (
     <Block>
-      {widgets.map((widget) => <RowWidget {...widget} key={widget.id} />)}
+      {widgets.map((widget) => (
+        <RowWidget {...widget} key={widget.id} />
+      ))}
     </Block>
   )
 }
@@ -19,7 +21,5 @@ const Block = styled.div`
   flex-direction: column;
   margin: 92px 0;
 `
-
-
 
 export default WidgetsContainer

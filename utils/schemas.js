@@ -48,3 +48,16 @@ export const homePageSchema = `query{
     }
   }
 }`
+
+export const allServicesQuery = `query{
+  allServicess{
+    edges{
+      node{
+        page_blocks {
+          title
+          content
+        }
+      }
+    }
+  }
+}`

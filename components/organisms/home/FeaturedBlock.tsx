@@ -1,17 +1,15 @@
-import React from 'react'
-import Image from 'next/image'
-import styled from 'styled-components'
 import ImageWrapper from 'components/atoms/ImageWrapper'
+import { RichText } from 'prismic-reactjs'
+import React from 'react'
+import styled from 'styled-components'
 import { FeaturdContent } from 'types/Home'
 
 const FeaturedBlock: React.FC<FeaturdContent> = ({ imageUrl, header, body }: FeaturdContent) => {
   return (
     <Block>
       <TextContainer>
-        <p>{header}</p>
-        {body.map((child) => (
-          <p key={child.text}>{child.text}</p>
-        ))}
+        <RichText render={header} />
+        <RichText render={body} />
       </TextContainer>
       <ImageWrapper src={imageUrl} width={450} height={450} alt="Unleashed Potential" />
     </Block>
@@ -33,14 +31,14 @@ const TextContainer = styled.div`
   text-align: center;
   max-width: 600px;
 
-  p:first-child {
+  h2:first-child {
     ${(props) => props.theme.fonts.xxxxxxl};
     font-family: ${(props) => props.theme.fonts.playFairDisplay};
     font-style: italic;
     color: ${(props) => props.theme.colors.standardGreen};
   }
 
-  p:not(:first-child) {
+  p {
     ${(props) => props.theme.fonts.xxxxxl};
     color: ${(props) => props.theme.colors.standardGreen};
   }

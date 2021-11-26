@@ -1,20 +1,19 @@
+import { RichTextBlock } from 'prismic-reactjs'
 export interface Banner {
-  imageUrl: string;
-  lineOne: string;
-  lineTwo: string;
+  imageUrl: string
+  lineOne: string
+  lineTwo: string
 }
 
 export interface FeaturdContent {
-  imageUrl: string;
-  header: string;
-  body: {
-    text: string;
-  }[];
+  imageUrl: string
+  header: RichTextBlock[]
+  body: RichTextBlock[]
 }
 
 export interface BlockWidget {
-  id?: number;
-  description: string;
-  title: string;
+  id?: number
+  description: string
+  title: RichTextBlock[]
   imageUrl: string | null
 }

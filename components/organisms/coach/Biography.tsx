@@ -1,22 +1,26 @@
+import { RichText, RichTextBlock } from 'prismic-reactjs'
 import React from 'react'
 import styled from 'styled-components'
 
 interface Props {
-  biography: string[]
+  biography: RichTextBlock[]
 }
 const Biography: React.FC<Props> = ({ biography }: Props) => {
   return (
-    <Content>
-      {biography.map((text) => (
-        <p key={text}>{text}</p>
-      ))}
-    </Content>
+    <ContentWrapper>
+      <RichText render={biography} />
+    </ContentWrapper>
   )
 }
 
-const Content = styled.div`
+const ContentWrapper = styled.div`
   ${(props) => props.theme.fonts.xxxxlwide};
   color: ${(props) => props.theme.colors.darkGreen};
+  margin: 16px;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
+    margin: 0;
+  }
 `
 
 export default Biography

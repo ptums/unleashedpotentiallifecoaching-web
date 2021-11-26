@@ -22,13 +22,10 @@ Our coaching is done virtually. We've found that meeting online allows for conve
 
 ## TO DOS
 
-- Build out coach page
-- Build out service page
+- Build out Service page
 - Build out Our Story Page
 - Build out Reviews Page
-- Build out 2x Coach Booking Cards
 - Build out Twilio Email APIs and Footer functionality
 - Mobile Menu/Mobile Review
 - Bring over JSON LD Schemas
-- Touch ups/Fix Husky config
 - Looking in text formatting based on Prismic fields

@@ -1,15 +1,15 @@
-import React from 'react'
+import CoachesBanner from 'components/organisms/home/CoachesBanner'
+import FeaturedBlock from 'components/organisms/home/FeaturedBlock'
+import HomeBanner from 'components/organisms/home/HomeBanner'
+import WidgetsContainer from 'components/organisms/home/WidgetsContainer'
+import FooterReview from 'components/shared/FooterReview'
 import SiteHead from 'components/shared/SiteHead'
 import Container from 'layouts/Container'
-import HomeBanner from 'components/organisms/home/HomeBanner'
-import FeaturedBlock from 'components/organisms/home/FeaturedBlock'
-import CoachesBanner from 'components/organisms/home/CoachesBanner'
-import WidgetsContainer from 'components/organisms/home/WidgetsContainer'
-import { Banner, FeaturdContent, BlockWidget } from 'types/Home'
-import { Seo } from 'types/SEO'
+import React from 'react'
 import { Coach } from 'types/Coach'
+import { Banner, BlockWidget, FeaturdContent } from 'types/Home'
 import { Review } from 'types/Review'
-import FooterReview from 'components/shared/FooterReview'
+import { Seo } from 'types/SEO'
 
 interface Props {
   banner: Banner
@@ -26,9 +26,8 @@ const HomePage: React.FC<Props> = ({
   blockWidgets,
   seo,
   coaches,
-  featuredReview
+  featuredReview,
 }: Props) => {
-
   return (
     <>
       <SiteHead {...seo} />

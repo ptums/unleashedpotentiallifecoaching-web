@@ -1,3 +1,5 @@
+import { RichTextBlock } from 'prismic-reactjs'
+
 import { Seo } from './SEO'
 
 export interface Coach {
@@ -8,8 +10,14 @@ export interface Coach {
     src: string
     width: string | number
     height: string | number
-    alt?: string
+    alt: string
   }
-  welcomeMessage?: string[]
-  biography?: string[]
+  bookTimeImage?: {
+    src: string
+    width: string | number
+    height: string | number
+    alt: string
+  }
+  welcomeMessage?: RichTextBlock[]
+  biography?: RichTextBlock[]
 }

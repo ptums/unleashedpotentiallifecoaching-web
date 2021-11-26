@@ -1,3 +1,4 @@
+import Button from 'components/atoms/Button'
 import Image from 'next/image'
 import React, { MouseEvent } from 'react'
 import styled from 'styled-components'
@@ -13,8 +14,14 @@ const ProfileCard: React.FC<Props> = ({ name, image, handleClick }) => {
   return (
     <Container>
       <InnerWrapper>
-        <Image {...image} width={300} height={400} layout="intrinsic" />
-        <BookTimeWrapper>Online Coaching with {name}</BookTimeWrapper>
+        <Image {...image} layout="intrinsic" />
+        <BookTimeWrapper>
+          <p>Online Coaching with {name}</p>
+          <p>1 hour</p>
+          <Button btnPadding="8px 16px" fontSize="xxxxl" handleClick={handleClick}>
+            Book now
+          </Button>
+        </BookTimeWrapper>
       </InnerWrapper>
     </Container>
   )
@@ -26,6 +33,7 @@ const Container = styled.div`
   border-radius: 4px;
   max-width: 100%;
   padding: 8px;
+  margin: 16px;
 
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     max-width: 720px;
@@ -40,18 +48,33 @@ const InnerWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     flex-direction: row;
     justify-content: flex-start;
     max-height: 320px;
+
+    span {
+      img {
+        max-width: 240px !important;
+      }
+    }
   }
 `
 
 const BookTimeWrapper = styled.div`
   margin: auto;
-  ${(props) => props.theme.fonts.xxxxxl};
   text-align: center;
   font-weight: 900;
+  text-transform: uppercase;
+
+  p:first-child {
+    ${(props) => props.theme.fonts.xxxxl};
+  }
+
+  p:nth-child(2) {
+    ${(props) => props.theme.fonts.xxxl};
+  }
+
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     margin-left: 24px;
   }

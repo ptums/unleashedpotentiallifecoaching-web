@@ -36,8 +36,21 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       height: coach.node.profile_image.dimensions.height,
       alt: coach.node.name[0].text,
     },
-    welcomeMessage: coach.node.welcome_message.map(({ text }) => text),
-    biography: coach.node.biography.map(({ text }) => text),
+    bookTimeImage: coach.node.book_time_photo
+      ? {
+          src: coach.node.book_time_photo.url,
+          width: coach.node.book_time_photo.dimensions.width,
+          height: coach.node.book_time_photo.dimensions.height,
+          alt: coach.node.name[0].text + ' Life Coach',
+        }
+      : {
+          src: coach.node.profile_image.url,
+          width: coach.node.profile_image.dimensions.width,
+          height: coach.node.profile_image.dimensions.height,
+          alt: coach.node.name[0].text + ' Life Coach',
+        },
+    welcomeMessage: coach.node.welcome_message,
+    biography: coach.node.biography,
   }
 
   return {

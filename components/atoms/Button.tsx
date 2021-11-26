@@ -5,10 +5,11 @@ interface Props {
   handleClick: (e: MouseEvent<HTMLButtonElement>) => void
   children: React.ReactNode
   btnPadding: string
+  fontSize?: string
 }
-const Button: React.FC<Props> = ({ handleClick, children, btnPadding }: Props) => {
+const Button: React.FC<Props> = ({ handleClick, children, btnPadding, fontSize }: Props) => {
   return (
-    <Container btnPadding={btnPadding} onClick={(e) => handleClick(e)}>
+    <Container fontSize={fontSize} btnPadding={btnPadding} onClick={(e) => handleClick(e)}>
       {children}
     </Container>
   )
@@ -16,13 +17,18 @@ const Button: React.FC<Props> = ({ handleClick, children, btnPadding }: Props) =
 
 interface BtnProps {
   btnPadding: string
+  fontSize?: string
 }
 const Container = styled.button<BtnProps>`
   margin: 8px 24px;
   border: 0;
   outline: 0;
   padding: ${({ btnPadding }) => btnPadding};
-  ${(props) => props.theme.fonts.xxxxxl};
+  ${(props) => {
+    const { fontSize } = props
+    const size = fontSize ? props.theme.fonts[fontSize] : props.theme.fonts.xxxxxl
+    return size
+  }};
   color: ${(props) => props.theme.colors.white};
   background-color: ${(props) => props.theme.colors.darkGreen};
   transition: all 0.2s;

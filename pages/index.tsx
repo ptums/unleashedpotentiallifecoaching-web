@@ -42,12 +42,9 @@ export const getStaticProps: GetStaticProps = async () => {
   const blockWidgets = page.block_widgets.map((block, index) => ({
     id: index,
     description: block.widget_description[0].text,
-    title: block.widget_title[0].text,
+    title: block.widget_title,
     imageUrl: block.widget_image.url,
   }))
-
-  console.log('coach')
-  console.log('=======')
 
   const coaches = coachesRequest
     .map(({ node }) => ({
@@ -69,14 +66,12 @@ export const getStaticProps: GetStaticProps = async () => {
     }))
     .sort((a, b) => (a.id > b.id ? 1 : -1))
 
-  console.log(coaches)
-
   const featuredReview = reviews
     .filter((review) => review.node.featured === true)
     .map(({ node }) => ({
       featured: node.featured,
-      name: node.name.map(({ text }) => text)[0],
-      quote: node.quote.map(({ text }) => text)[0],
+      name: node.name,
+      quote: node.quote,
     }))[0]
 
   return {
@@ -92,10 +87,8 @@ export const getStaticProps: GetStaticProps = async () => {
       },
       featuredContent: {
         imageUrl: page.featured_image.url,
-        header: page.featured_message_header[0].text,
-        body: page.featured_mesage_body.map((body) => ({
-          text: body.text,
-        })),
+        header: page.featured_message_header,
+        body: page.featured_mesage_body,
       },
       blockWidgets,
       coaches,
