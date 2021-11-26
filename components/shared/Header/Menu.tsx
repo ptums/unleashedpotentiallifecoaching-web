@@ -82,19 +82,19 @@ const MenuWrapper = styled.ul`
     flex-direction: row;
     justify-content: center;
     text-align: center;
-    height: 48px;
+    height: 32px;
   }
 
   li {
     list-style-type: none;
     padding-bottom: 8px;
-    ${(props) => props.theme.fonts.xxxxxl};
+    ${(props) => props.theme.fonts.xxxxl};
     margin: 0 32px;
     color: ${(props) => props.theme.colors.standardGreen};
     transition: all 0.1s ease-in;
 
     button {
-      ${(props) => props.theme.fonts.xxxxxl};
+      ${(props) => props.theme.fonts.xxxxl};
       color: ${(props) => props.theme.colors.standardGreen};
       background-color: white;
       outline: 0;

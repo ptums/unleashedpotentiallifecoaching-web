@@ -38,6 +38,7 @@ const Container = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     max-width: 720px;
     max-height: 320px;
+    margin auto;
     margin-top: 64px;
   }
 `

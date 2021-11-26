@@ -1,5 +1,5 @@
 import Prismic from 'prismic-javascript'
-import { homePageSchema, allCoachesSchema, allReviewsSchema } from "utils/schemas"
+import { allCoachesSchema, allReviewsSchema, allServicesQuery, homePageSchema } from 'utils/schemas'
 
 const REPOSITORY = process.env.PRISMIC_REPOSITORY_NAME
 const REF_API_URL = `https://${REPOSITORY}.cdn.prismic.io/api/v2`
@@ -41,21 +41,27 @@ const fetchAPI = async (query, { previewData, variables } = {}) => {
 
 /** Page Query */
 export const homePageQuery = async () => {
-  const data = await fetchAPI(homePageSchema);
+  const data = await fetchAPI(homePageSchema)
 
-  return data.allHome_pages?.edges[0]?.node;
+  return data.allHome_pages?.edges[0]?.node
 }
 
 /** Coaches Query */
 export const coachesQuery = async () => {
-  const data = await fetchAPI(allCoachesSchema);
+  const data = await fetchAPI(allCoachesSchema)
 
-  return data.allCoachs?.edges;
+  return data.allCoachs?.edges
 }
 
 /** Reviews Query */
 export const reviewsQuery = async () => {
-  const data = await fetchAPI(allReviewsSchema);
+  const data = await fetchAPI(allReviewsSchema)
 
-  return data.allReviewss?.edges;
+  return data.allReviewss?.edges
+}
+
+export const servicesQuery = async () => {
+  const data = await fetchAPI(allServicesQuery)
+
+  return data.allServicess?.edges
 }

@@ -56,7 +56,7 @@ const Header = styled.div`
   }
 `
 const Description = styled.p`
-  ${(props) => props.theme.fonts.xxxxxxlwide};
+  ${(props) => props.theme.fonts.xxxxxlmed};
   color: ${(props) => props.theme.colors.standardGreen};
 `
 
