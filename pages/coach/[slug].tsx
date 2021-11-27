@@ -7,6 +7,7 @@ import { Coach } from 'types/Coach'
 import { Review } from 'types/Review'
 import { coachesQuery, reviewsQuery } from 'utils/api'
 import { urlify } from 'utils/helpers'
+import { formatReview } from 'utils/helpers'
 
 interface Props {
   coach: Coach
@@ -57,13 +58,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     biography: coach.node.biography,
   }
 
-  const featuredReview = reviews
-    .filter((review) => review.node.featured === true)
-    .map(({ node }) => ({
-      featured: node.featured,
-      name: node.name,
-      quote: node.quote,
-    }))[0]
+  const featuredReview = formatReview(reviews)
 
   return {
     props: {

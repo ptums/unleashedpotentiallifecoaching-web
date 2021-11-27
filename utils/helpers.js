@@ -1,1 +1,0 @@
-export const urlify = str => str.replace(/\s+/g, '-').toLowerCase()

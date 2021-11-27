@@ -1,7 +1,8 @@
 import Button from 'components/atoms/Button'
 import Image from 'next/image'
-import React, { MouseEvent } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import handleBooking from 'utils/booking-time'
 
 interface Props {
   name: string
@@ -11,9 +12,8 @@ interface Props {
     height: string | number
     width: string | number
   }
-  handleClick: (e: MouseEvent<HTMLButtonElement>) => void
 }
-const ProfileCard: React.FC<Props> = ({ name, image, handleClick }) => {
+const ProfileCard: React.FC<Props> = ({ name, image }) => {
   return (
     <Container>
       <InnerWrapper>
@@ -21,7 +21,7 @@ const ProfileCard: React.FC<Props> = ({ name, image, handleClick }) => {
         <BookTimeWrapper>
           <p>Online Coaching with {name}</p>
           <p>1 hour</p>
-          <Button btnPadding="8px 16px" fontSize="xxxxl" handleClick={handleClick}>
+          <Button btnPadding="8px 16px" fontSize="xxxxl" handleClick={handleBooking}>
             Book now
           </Button>
         </BookTimeWrapper>
@@ -40,7 +40,7 @@ const Container = styled.div`
 
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     max-width: 720px;
-    max-height: 320px;
+    height: 248px;
     margin auto;
     margin-top: 64px;
   }
@@ -55,11 +55,11 @@ const InnerWrapper = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     flex-direction: row;
     justify-content: flex-start;
-    max-height: 320px;
+    min-height: 244px;
 
     span {
       img {
-        max-width: 240px !important;
+        max-height: 244px !important;
       }
     }
   }
@@ -80,7 +80,7 @@ const BookTimeWrapper = styled.div`
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
-    margin-left: 24px;
+    margin-left: 72px;
   }
 `
 export default ProfileCard

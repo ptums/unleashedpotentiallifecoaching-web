@@ -19,7 +19,6 @@ const mockProps = {
       spans: [],
     },
   ],
-  handleClick: jest.fn(),
 }
 
 describe('<ProfileHeader />', () => {

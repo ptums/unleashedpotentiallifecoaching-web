@@ -21,9 +21,6 @@ interface Props {
 }
 
 const CoachPage: React.FC<Props> = ({ page_blocks, seo, coaches, featuredReview }: Props) => {
-  console.log('coaches')
-  console.log('======')
-  console.log(coaches[0])
   return (
     <>
       <SiteHead {...seo} />
@@ -52,7 +49,7 @@ const ContentWrapper = styled.div`
   margin: 64px 0;
 
   div {
-    margin-bottom: 64px;
+    margin-bottom: 40px;
   }
 `
 

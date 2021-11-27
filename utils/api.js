@@ -1,10 +1,15 @@
 import Prismic from 'prismic-javascript'
-import { allCoachesSchema, allReviewsSchema, allServicesQuery, homePageSchema } from 'utils/schemas'
+import {
+  allCoachesSchema,
+  allReviewsSchema,
+  allServicesQuery,
+  homePageSchema,
+  ourStorySchema,
+} from 'utils/schemas'
 
 const REPOSITORY = process.env.PRISMIC_REPOSITORY_NAME
 const REF_API_URL = `https://${REPOSITORY}.cdn.prismic.io/api/v2`
 const GRAPHQL_API_URL = `https://${REPOSITORY}.cdn.prismic.io/graphql`
-// export const API_URL = 'https://your-repo-name.cdn.prismic.io/api/v2'
 export const API_TOKEN = process.env.PRISMIC_API_TOKEN
 export const API_LOCALE = process.env.PRISMIC_REPOSITORY_LOCALE
 
@@ -64,4 +69,10 @@ export const servicesQuery = async () => {
   const data = await fetchAPI(allServicesQuery)
 
   return data.allServicess?.edges
+}
+
+export const ourStoryQuery = async () => {
+  const data = await fetchAPI(ourStorySchema)
+
+  return data.allOur_storys?.edges
 }

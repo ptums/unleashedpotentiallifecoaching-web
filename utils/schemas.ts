@@ -1,4 +1,4 @@
-export const allCoachesSchema = `query{
+export const allCoachesSchema: string = `query{
   allCoachs{
     edges{
       node{
@@ -15,7 +15,7 @@ export const allCoachesSchema = `query{
   }
 }`
 
-export const allReviewsSchema = `query{
+export const allReviewsSchema: string = `query{
   allReviewss{
     edges{
       node{
@@ -27,7 +27,7 @@ export const allReviewsSchema = `query{
   }
 }`
 
-export const homePageSchema = `query{
+export const homePageSchema: string = `query{
   allHome_pages {
     edges{
       node {
@@ -49,7 +49,7 @@ export const homePageSchema = `query{
   }
 }`
 
-export const allServicesQuery = `query{
+export const allServicesQuery: string = `query{
   allServicess{
     edges {
       node{
@@ -59,6 +59,19 @@ export const allServicesQuery = `query{
           title
           content
         }
+      }
+    }
+  }
+}`
+
+export const ourStorySchema: string = `query{
+  allOur_storys{
+    edges{
+      node {
+        seo_title
+        seo_meta_description
+        title
+        page_content
       }
     }
   }

@@ -32,7 +32,7 @@ const Card = styled.div`
   margin: 0 32px;
   margin-bottom: 32px;
   transition: all 0.2s;
-  max-width: 420px;
+  min-width: 316px;
 
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     margin-bottom: 0;

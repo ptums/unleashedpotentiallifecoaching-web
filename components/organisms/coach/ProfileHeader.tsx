@@ -3,6 +3,7 @@ import ImageWrapper from 'components/atoms/ImageWrapper'
 import { RichText, RichTextBlock } from 'prismic-reactjs'
 import React, { MouseEvent } from 'react'
 import styled from 'styled-components'
+import handleBooking from 'utils/booking-time'
 
 interface Props {
   name: string
@@ -13,10 +14,9 @@ interface Props {
     alt: string
   }
   welcomeMessage?: RichTextBlock[]
-  handleClick: (e: MouseEvent<HTMLButtonElement>) => void
 }
 
-const ProfileHeader: React.FC<Props> = ({ name, image, welcomeMessage, handleClick }: Props) => {
+const ProfileHeader: React.FC<Props> = ({ name, image, welcomeMessage }: Props) => {
   const firstName = name.split(' ')[0]
 
   return (
@@ -26,7 +26,7 @@ const ProfileHeader: React.FC<Props> = ({ name, image, welcomeMessage, handleCli
         <h1>Hi, I&apos;m {firstName}</h1>
         <RichText render={welcomeMessage} />
         <BtnWrapper>
-          <Button btnPadding="16px 64px" handleClick={handleClick}>
+          <Button btnPadding="16px 64px" handleClick={handleBooking}>
             Book
           </Button>
         </BtnWrapper>

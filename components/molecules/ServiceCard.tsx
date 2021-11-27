@@ -27,8 +27,14 @@ const ServiceCard: React.FC<Coach> = ({ name, image }: Coach) => {
 
 const ServiceWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin: 16px;
   margin-bottom: 88px;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    flex-direction: row;
+    justify-content: center;
+  }
 `
 interface ImageProps {
   image: string
@@ -36,16 +42,26 @@ interface ImageProps {
 const ProfileImage = styled.div<ImageProps>`
   background: url(${({ image }) => image}) no-repeat center;
   background-size: cover;
-  width: 500px;
+  width: 100%;
   height: 400px;
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    width: 500px;
+    height: 400px;
+  }
 `
 const Container = styled.div`
   background-color: ${(props) => props.theme.colors.white};
   box-shadow: ${(props) => props.theme.colors.extraLargeShadow};
   border-radius: 4px;
   padding: 8px;
+  height: 224px;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    height: 242px;
+    position: relative;
+    right: 4em;
+    top: 8em;
+    bottom: 8em;
   }
 `
 
@@ -54,10 +70,13 @@ const InnerWrapper = styled.div`
   border-radius: 4px;
   display: flex;
   flex-direction: column;
+  height: 220px;
 
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     flex-direction: row;
     justify-content: flex-start;
+    height: 240px;
+    width: 410px;
   }
 `
 
@@ -66,6 +85,7 @@ const BookTimeWrapper = styled.div`
   text-align: center;
   font-weight: 900;
   text-transform: uppercase;
+  color: ${(props) => props.theme.colors.standardGreen};
 
   p:first-child {
     ${(props) => props.theme.fonts.xxxxl};
@@ -75,7 +95,7 @@ const BookTimeWrapper = styled.div`
     ${(props) => props.theme.fonts.xxxl};
   }
 
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     margin-left: 24px;
   }
 `

@@ -6,6 +6,7 @@ import { Banner, BlockWidget, FeaturdContent } from 'types/Home'
 import { Review } from 'types/Review'
 import { Seo } from 'types/SEO'
 import { coachesQuery, homePageQuery, reviewsQuery } from 'utils/api'
+import { formatReview } from 'utils/helpers'
 
 interface Props {
   banner: Banner
@@ -66,13 +67,7 @@ export const getStaticProps: GetStaticProps = async () => {
     }))
     .sort((a, b) => (a.id > b.id ? 1 : -1))
 
-  const featuredReview = reviews
-    .filter((review) => review.node.featured === true)
-    .map(({ node }) => ({
-      featured: node.featured,
-      name: node.name,
-      quote: node.quote,
-    }))[0]
+  const featuredReview = formatReview(reviews)
 
   return {
     props: {

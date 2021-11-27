@@ -5,6 +5,7 @@ import { Coach } from 'types/Coach'
 import { Review } from 'types/Review'
 import { TServices } from 'types/Services'
 import { coachesQuery, reviewsQuery, servicesQuery } from 'utils/api'
+import { formatReview } from 'utils/helpers'
 
 interface Props {
   service: TServices
@@ -37,13 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
     page_blocks: node.page_blocks,
   }))
 
-  const featuredReview = reviews
-    .filter((review) => review.node.featured === true)
-    .map(({ node }) => ({
-      featured: node.featured,
-      name: node.name,
-      quote: node.quote,
-    }))[0]
+  const featuredReview = formatReview(reviews)
 
   const coaches = coachesRequest
     .map(({ node }) => ({
