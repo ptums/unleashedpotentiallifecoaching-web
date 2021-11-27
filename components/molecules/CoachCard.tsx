@@ -6,12 +6,13 @@ import { Coach } from 'types/Coach'
 import { urlify } from 'utils/helpers'
 
 const CoachCard: React.FC<Coach> = ({ name, image }: Coach) => {
+  const { src, alt } = image
   const coachUrl = `/coach/${urlify(name)}`
   return (
     <Card>
       <Link href={coachUrl}>
         <a>
-          <ImageWrapper {...image} width={400} height={400} alt={name} />
+          <ImageWrapper src={src} width={400} height={400} alt={alt} />
           <Details>
             <Time>1 hour coaching with</Time>
             <Name>{name}</Name>
