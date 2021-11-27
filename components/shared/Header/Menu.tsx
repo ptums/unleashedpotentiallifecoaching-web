@@ -134,6 +134,11 @@ const DropDown = styled.ul`
     text-align: left;
     margin: 16px;
     padding: 0;
+    height: 30px;
+
+    &:hover {
+      border-bottom: 0;
+    }
   }
 `
 

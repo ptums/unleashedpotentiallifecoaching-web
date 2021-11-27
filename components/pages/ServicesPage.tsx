@@ -1,19 +1,29 @@
+import ServiceCard from 'components/molecules/ServiceCard'
+import FooterReview from 'components/shared/FooterReview'
 import PageBanner from 'components/shared/PageBanner'
+import SiteHead from 'components/shared/SiteHead'
 import Container from 'layouts/Container'
-import { RichText } from 'prismic-reactjs'
+import { RichText, RichTextBlock } from 'prismic-reactjs'
 import React from 'react'
 import styled from 'styled-components'
-import { TServices } from 'types/Services'
+import { Coach } from 'types/Coach'
+import { Review } from 'types/Review'
+import { Seo } from 'types/SEO'
 
-import SiteHead from '../shared/SiteHead'
+interface Props {
+  seo: Seo
+  page_blocks: {
+    content: RichTextBlock[]
+    title: RichTextBlock[]
+  }[]
+  featuredReview: Review
+  coaches: Coach[]
+}
 
-const CoachPage: React.FC<TServices> = ({ page_blocks, seo }: TServices) => {
-  const handleBooking = (e) => {
-    e.preventDefault()
-
-    console.log('well get there!')
-  }
-
+const CoachPage: React.FC<Props> = ({ page_blocks, seo, coaches, featuredReview }: Props) => {
+  console.log('coaches')
+  console.log('======')
+  console.log(coaches[0])
   return (
     <>
       <SiteHead {...seo} />
@@ -27,7 +37,11 @@ const CoachPage: React.FC<TServices> = ({ page_blocks, seo }: TServices) => {
             </div>
           ))}
         </ContentWrapper>
+        {coaches.map((coach) => (
+          <ServiceCard name={coach.name} image={coach.image} key={coach.id} />
+        ))}
       </Container>
+      <FooterReview {...featuredReview} />
     </>
   )
 }
