@@ -4,24 +4,28 @@ import ErrorPage from 'next/error'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { Coach } from 'types/Coach'
-import { coachesQuery } from 'utils/api'
+import { Review } from 'types/Review'
+import { coachesQuery, reviewsQuery } from 'utils/api'
 import { urlify } from 'utils/helpers'
+
 interface Props {
   coach: Coach
   slug: string
+  featuredReview: Review
 }
 
-const CoachProfile: React.FC<Props> = ({ coach, slug }: Props) => {
+const CoachProfile: React.FC<Props> = ({ coach, slug, featuredReview }: Props) => {
   const router = useRouter()
   if (!router.isFallback && !slug) {
     return <ErrorPage statusCode={404} />
   }
 
-  return <CoachPage {...coach} />
+  return <CoachPage coach={coach} featuredReview={featuredReview} />
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const request = await coachesQuery()
+  const reviews = await reviewsQuery()
   const coach = request.filter((coach) => urlify(coach.node.name[0].text) === params.slug)[0]
 
   const coachData = {
@@ -53,10 +57,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     biography: coach.node.biography,
   }
 
+  const featuredReview = reviews
+    .filter((review) => review.node.featured === true)
+    .map(({ node }) => ({
+      featured: node.featured,
+      name: node.name,
+      quote: node.quote,
+    }))[0]
+
   return {
     props: {
       coach: coachData,
       slug: params.slug,
+      featuredReview,
     },
     revalidate: 60 * 3,
   }
