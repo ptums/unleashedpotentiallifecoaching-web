@@ -11,7 +11,7 @@ const CoachCard: React.FC<Coach> = ({ name, image }: Coach) => {
     <Card>
       <Link href={coachUrl}>
         <a>
-          <ImageWrapper {...image} alt={name} />
+          <ImageWrapper {...image} width={400} height={400} alt={name} />
           <Details>
             <Time>1 hour coaching with</Time>
             <Name>{name}</Name>
