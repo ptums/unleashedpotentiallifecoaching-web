@@ -11,7 +11,7 @@ interface Props {
 }
 
 const ImageWrapper: React.FC<Props> = ({ src, width, height, alt, radius }: Props) => {
-  const imageProps = { src, width, height, alt, radius }
+  const imageProps = { src, width, height, alt }
   return (
     <Container radius={radius}>
       <Image {...imageProps} layout="intrinsic" />
