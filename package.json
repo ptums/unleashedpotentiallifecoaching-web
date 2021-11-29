@@ -7,7 +7,7 @@
     "dev": "next dev -p 3003",
     "build": "next build",
     "postbuild": "next-sitemap",
-    "start": "next start",
+    "start": "next start -p 3004",
     "lint": " eslint . --fix",
     "format": "prettier --write .",
     "prepare": "husky install",
@@ -34,6 +34,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
+    "sharp": "^0.29.3",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {

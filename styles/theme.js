@@ -17,6 +17,7 @@ const fonts = {
   xxxxxxxl: 'font-size: 4.5rem; line-height: 1',
   xxxxxxxxl: 'font-size: 6rem; line-height: 1',
   xxxxxxxxxl: 'font-size: 8rem; line-height: 1',
+  xxxxxxxxxxl: 'font-size: 9rem; line-height: 1.1',
   excerpt: 'font-size: 2.1rem; line-height: 1.6',
   bold: 700,
   normal: 400,

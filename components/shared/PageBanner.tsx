@@ -15,15 +15,15 @@ const PageBanner: React.FC<Props> = ({ title }: Props) => {
 const Container = styled.div`
   background: url('/standard-background.webp') no-repeat center center fixed;
   background-size: cover;
-  height: 400px;
+  height: 450px;
   position: relative;
   top: -8px;
 `
 
-const Title = styled.p`
+const Title = styled.h1`
   margin: auto;
   text-align: center;
-  ${(props) => props.theme.fonts.xxxxxxxxxl};
+  ${(props) => props.theme.fonts.xxxxxxxxxxl};
   font-family: ${(props) => props.theme.fonts.playFairDisplay};
   font-style: italic;
   color: ${(props) => props.theme.colors.cream};
@@ -32,7 +32,7 @@ const Title = styled.p`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 320px;
+  height: 425px;
 `
 
 export default PageBanner
