@@ -16,25 +16,14 @@ interface Props {
 const CoachPage: React.FC<Props> = ({ coach, featuredReview }: Props) => {
   const { name, image, welcomeMessage, biography, bookTimeImage, seo } = coach
 
-  const handleBooking = (e) => {
-    e.preventDefault()
-
-    console.log('well get there!')
-  }
-
   return (
     <>
       <SiteHead {...seo} />
       <main>
         <Container>
-          <ProfileHeader
-            handleClick={handleBooking}
-            name={name}
-            image={image}
-            welcomeMessage={welcomeMessage}
-          />
+          <ProfileHeader name={name} image={image} welcomeMessage={welcomeMessage} />
           <Biography biography={biography} />
-          <ProfileCard name={name} image={bookTimeImage} handleClick={handleBooking} />
+          <ProfileCard name={name} image={bookTimeImage} />
         </Container>
         <ReviewWrapper>
           <FooterReview {...featuredReview} />

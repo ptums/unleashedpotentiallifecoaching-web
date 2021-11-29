@@ -22,8 +22,6 @@ Our coaching is done virtually. We've found that meeting online allows for conve
 
 ## TO DOS
 
-- Build out Service page
-- Build out Our Story Page
 - Build out Reviews Page
 - Build out Twilio Email APIs and Footer functionality
 - Mobile Menu/Mobile Review
