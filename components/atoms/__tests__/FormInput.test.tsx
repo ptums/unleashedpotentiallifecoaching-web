@@ -22,17 +22,17 @@ const mockPropsTwo = {
 describe('<FormInput />', () => {
   it('renders the text input value', () => {
     renderWithTheme(<FormInput {...mockPropsOne} />)
-    const input = screen.getByLabelText('text-input')
+    const input: HTMLInputElement = screen.getByLabelText('text-input')
 
     fireEvent.change(input, { target: { value: 'Hello!' } })
-    expect((input as HTMLInputElement).value).toBe('Hello!')
+    expect(input.value).toBe('Hello!')
   })
 
   it('renders the textarea value', () => {
     renderWithTheme(<FormInput {...mockPropsTwo} />)
-    const radio = screen.getByLabelText('textarea-input')
+    const textarea = screen.getByLabelText('textarea-input')
 
-    fireEvent.change(radio, { target: { value: 'Hello!' } })
-    expect((radio as HTMLInputElement).value).toBe('Hello!')
+    fireEvent.change(textarea, { target: { value: 'Hello!' } })
+    expect((textarea as HTMLInputElement).value).toBe('Hello!')
   })
 })
