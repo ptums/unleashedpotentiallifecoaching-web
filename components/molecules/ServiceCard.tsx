@@ -15,7 +15,7 @@ const ServiceCard: React.FC<Coach> = ({ name, image }: Coach) => {
           <BookTimeWrapper>
             <p>Online Coaching with {name}</p>
             <p>1 hour</p>
-            <Button btnPadding="8px 16px" fontSize="xxxxl" handleClick={handleBooking}>
+            <Button btnPadding="8px 16px" fontSize="lg" handleClick={handleBooking}>
               Book now
             </Button>
           </BookTimeWrapper>
@@ -88,11 +88,11 @@ const BookTimeWrapper = styled.div`
   color: ${(props) => props.theme.colors.standardGreen};
 
   p:first-child {
-    ${(props) => props.theme.fonts.xxxxl};
+    ${(props) => props.theme.fonts.lg};
   }
 
   p:nth-child(2) {
-    ${(props) => props.theme.fonts.xxxl};
+    ${(props) => props.theme.fonts.base};
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {

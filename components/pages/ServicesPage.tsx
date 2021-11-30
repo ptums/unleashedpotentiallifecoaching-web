@@ -44,7 +44,7 @@ const CoachPage: React.FC<Props> = ({ page_blocks, seo, coaches, featuredReview 
 }
 
 const ContentWrapper = styled.div`
-  ${(props) => props.theme.fonts.xxxxl};
+  ${(props) => props.theme.fonts.lg};
   color: ${(props) => props.theme.colors.standardGreen};
   margin: 64px 0;
 

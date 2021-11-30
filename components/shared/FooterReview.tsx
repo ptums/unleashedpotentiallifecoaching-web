@@ -21,7 +21,7 @@ const FooterReview: React.FC<Review> = ({ name, quote }: Review) => {
 }
 
 const Title = styled.p`
-  ${(props) => props.theme.fonts.xxxxxxxxl};
+  ${(props) => props.theme.fonts.xxxxl};
   color: ${(props) => props.theme.colors.white};
   font-family: ${(props) => props.theme.fonts.playFairDisplay};
   font-style: italic;
@@ -37,7 +37,7 @@ const MessageContainer = styled.div`
 `
 const Message = styled.span`
   p {
-    ${(props) => props.theme.fonts.xxxxxxlwide};
+    ${(props) => props.theme.fonts.xxlwide};
     color: ${(props) => props.theme.colors.white};
     font-family: ${(props) => props.theme.fonts.playFairDisplay};
     text-align: center;
@@ -50,7 +50,7 @@ const Name = styled.span`
     content: '- ';
   }
   h5 {
-    ${(props) => props.theme.fonts.xxxxxxlwide};
+    ${(props) => props.theme.fonts.xxlwide};
     color: ${(props) => props.theme.colors.white};
     font-family: ${(props) => props.theme.fonts.playFairDisplay};
     font-weight: 700;

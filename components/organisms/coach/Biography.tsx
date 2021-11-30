@@ -14,7 +14,7 @@ const Biography: React.FC<Props> = ({ biography }: Props) => {
 }
 
 const ContentWrapper = styled.div`
-  ${(props) => props.theme.fonts.xxxxxlwide};
+  ${(props) => props.theme.fonts.xlwide};
   color: ${(props) => props.theme.colors.darkGreen};
   margin: 16px;
 

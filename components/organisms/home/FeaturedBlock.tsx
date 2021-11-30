@@ -32,14 +32,14 @@ const TextContainer = styled.div`
   max-width: 600px;
 
   h2:first-child {
-    ${(props) => props.theme.fonts.xxxxxxl};
+    ${(props) => props.theme.fonts.xxl};
     font-family: ${(props) => props.theme.fonts.playFairDisplay};
     font-style: italic;
     color: ${(props) => props.theme.colors.standardGreen};
   }
 
   p {
-    ${(props) => props.theme.fonts.xxxxxl};
+    ${(props) => props.theme.fonts.xl};
     color: ${(props) => props.theme.colors.standardGreen};
   }
 `

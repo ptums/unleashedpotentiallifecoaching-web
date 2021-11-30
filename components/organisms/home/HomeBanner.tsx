@@ -31,7 +31,7 @@ const BannerText = styled.div`
   min-height: 640px;
 
   h1 {
-    ${(props) => props.theme.fonts.xxxxxxxxxl};
+    ${(props) => props.theme.fonts.xxxxxl};
     margin: 0;
     padding: 0;
     text-shadow: ${(props) => props.theme.colors.shadowNormal};
@@ -40,7 +40,7 @@ const BannerText = styled.div`
   }
 
   h2 {
-    ${(props) => props.theme.fonts.xxxxxxxxxl};
+    ${(props) => props.theme.fonts.xxxxxl};
     color: ${(props) => props.theme.colors.white};
     text-shadow: ${(props) => props.theme.colors.shadowNormal};
     margin: 0;

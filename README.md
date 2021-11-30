@@ -11,7 +11,6 @@ Our coaching is done virtually. We've found that meeting online allows for conve
 **Built with**
 
 - [Jest](https://jestjs.io/)
-- [Mailgun](https://www.mailgun.com/)
 - [Next.js](https://nextjs.org/)
 - [Prismic.io](https://prismic.io/)
 - [React Testing Library](https://testing-library.com)
@@ -22,7 +21,7 @@ Our coaching is done virtually. We've found that meeting online allows for conve
 
 ## TO DOS
 
-- Build out Reviews Page
-- Build out Twilio Email APIs and Footer functionality
+- Build out Twilio Email APIs and Form functionality
 - Mobile Menu/Mobile Review
-- Bring over JSON LD Schemas
+- Make sure all components have tests and pages have snapshots
+- Find the perfect banner images

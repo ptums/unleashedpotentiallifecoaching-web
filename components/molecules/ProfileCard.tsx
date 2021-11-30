@@ -21,7 +21,7 @@ const ProfileCard: React.FC<Props> = ({ name, image }) => {
         <BookTimeWrapper>
           <p>Online Coaching with {name}</p>
           <p>1 hour</p>
-          <Button btnPadding="8px 16px" fontSize="xxxxl" handleClick={handleBooking}>
+          <Button btnPadding="8px 16px" fontSize="lg" handleClick={handleBooking}>
             Book now
           </Button>
         </BookTimeWrapper>
@@ -72,11 +72,11 @@ const BookTimeWrapper = styled.div`
   text-transform: uppercase;
 
   p:first-child {
-    ${(props) => props.theme.fonts.xxxxl};
+    ${(props) => props.theme.fonts.lg};
   }
 
   p:nth-child(2) {
-    ${(props) => props.theme.fonts.xxxl};
+    ${(props) => props.theme.fonts.base};
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {

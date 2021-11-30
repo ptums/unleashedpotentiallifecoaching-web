@@ -11,14 +11,14 @@ const Banner = () => (
 )
 
 const Header = styled.p`
-  ${(props) => props.theme.fonts.xxxxxl};
+  ${(props) => props.theme.fonts.xl};
   color: ${(props) => props.theme.colors.standardGreen};
   font-family: ${(props) => props.theme.fonts.playFairDisplay};
   text-align: center;
 `
 
 const SubTitle = styled.p`
-  ${(props) => props.theme.fonts.xxxxxxxxl};
+  ${(props) => props.theme.fonts.xxxxl};
   color: ${(props) => props.theme.colors.standardGreen};
   font-family: ${(props) => props.theme.fonts.playFairDisplay};
   text-align: center;

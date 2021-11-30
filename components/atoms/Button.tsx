@@ -26,7 +26,7 @@ const Container = styled.button<BtnProps>`
   padding: ${({ btnPadding }) => btnPadding};
   ${(props) => {
     const { fontSize } = props
-    const size = fontSize ? props.theme.fonts[fontSize] : props.theme.fonts.xxxxxl
+    const size = fontSize ? props.theme.fonts[fontSize] : props.theme.fonts.xl
     return size
   }};
   color: ${(props) => props.theme.colors.white};

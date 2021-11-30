@@ -48,7 +48,7 @@ const Message = styled.div`
 `
 const Header = styled.div`
   h3 {
-    ${(props) => props.theme.fonts.xxxxxxxl};
+    ${(props) => props.theme.fonts.xxxl};
     color: ${(props) => props.theme.colors.standardGreen};
     font-family: ${(props) => props.theme.fonts.playFairDisplay};
     font-style: italic;
@@ -56,7 +56,7 @@ const Header = styled.div`
   }
 `
 const Description = styled.p`
-  ${(props) => props.theme.fonts.xxxxxlmed};
+  ${(props) => props.theme.fonts.xlmed};
   color: ${(props) => props.theme.colors.standardGreen};
 `
 

@@ -15,7 +15,7 @@ const PageBanner: React.FC<Props> = ({ title }: Props) => {
 const Container = styled.div`
   background: url('/standard-background.webp') no-repeat center center fixed;
   background-size: cover;
-  height: 450px;
+  height: 540px;
   position: relative;
   top: -8px;
 `
@@ -23,7 +23,7 @@ const Container = styled.div`
 const Title = styled.h1`
   margin: auto;
   text-align: center;
-  ${(props) => props.theme.fonts.xxxxxxxxxxl};
+  ${(props) => props.theme.fonts.xxxxxxl};
   font-family: ${(props) => props.theme.fonts.playFairDisplay};
   font-style: italic;
   color: ${(props) => props.theme.colors.cream};

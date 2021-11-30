@@ -60,13 +60,13 @@ const Details = styled.div`
 
   h1 {
     color: ${(props) => props.theme.colors.standardGreen};
-    ${(props) => props.theme.fonts.xxxxxxxl};
+    ${(props) => props.theme.fonts.xxxl};
     margin-top: 0;
   }
 
   p {
     color: ${(props) => props.theme.colors.standardGreen};
-    ${(props) => props.theme.fonts.xxxxxl};
+    ${(props) => props.theme.fonts.xl};
     margin-top: 0;
   }
 `

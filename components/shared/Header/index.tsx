@@ -18,7 +18,7 @@ const HeaderContainer = styled.header`
   z-index: 99;
 `
 const SiteLogo = styled.p`
-  ${(props) => props.theme.fonts.xxxxxxxl};
+  ${(props) => props.theme.fonts.xxxl};
   text-align: center;
   font-weight: medium;
   font-style: italic;
@@ -29,7 +29,7 @@ const SiteLogo = styled.p`
 `
 
 const SiteSubTitle = styled.p`
-  ${(props) => props.theme.fonts.xxxxl};
+  ${(props) => props.theme.fonts.lg};
   font-family: ${(props) => props.theme.fonts.playFairDisplay};
   color: ${(props) => props.theme.colors.standardGreen};
   text-align: center;

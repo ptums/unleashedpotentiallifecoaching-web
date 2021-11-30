@@ -34,13 +34,13 @@ const OurStoryPage: React.FC<Props> = ({ seo, title, pageContent, featuredReview
 }
 
 const ContentWrapper = styled.div`
-  ${(props) => props.theme.fonts.xxxxxl};
+  ${(props) => props.theme.fonts.xl};
   color: ${(props) => props.theme.colors.darkGreen};
   margin-bottom: 64px;
 
   h2 {
     text-align: center;
-    ${(props) => props.theme.fonts.xxxxxxxxl};
+    ${(props) => props.theme.fonts.xxxxl};
   }
 
   .block-img {

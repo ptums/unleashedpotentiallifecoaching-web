@@ -56,13 +56,13 @@ const Details = styled.div`
 `
 
 const Time = styled.p`
-  ${(props) => props.theme.fonts.xxxxxl};
+  ${(props) => props.theme.fonts.xl};
   font-weight: 700;
   margin-bottom: 0;
 `
 
 const Name = styled.p`
-  ${(props) => props.theme.fonts.xxxxxl};
+  ${(props) => props.theme.fonts.xl};
   color: ${(props) => props.theme.colors.darkGreen};
   margin-top: 0;
 `

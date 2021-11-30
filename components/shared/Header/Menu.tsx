@@ -133,13 +133,13 @@ const MenuWrapper = styled.ul`
   li {
     list-style-type: none;
     padding-bottom: 8px;
-    ${(props) => props.theme.fonts.xxxxl};
+    ${(props) => props.theme.fonts.lg};
     margin: 0 32px;
     color: ${(props) => props.theme.colors.standardGreen};
     transition: all 0.1s ease-in;
 
     button {
-      ${(props) => props.theme.fonts.xxxxl};
+      ${(props) => props.theme.fonts.lg};
       color: ${(props) => props.theme.colors.standardGreen};
       background-color: white;
       outline: 0;
@@ -174,7 +174,7 @@ const DropDown = styled.ul`
   z-index: 99;
 
   li {
-    ${(props) => props.theme.fonts.xxxxl};
+    ${(props) => props.theme.fonts.lg};
     text-align: left;
     margin: 16px;
     padding: 0;
