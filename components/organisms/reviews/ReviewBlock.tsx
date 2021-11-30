@@ -1,4 +1,4 @@
-import { RichText, RichTextBlock } from 'prismic-reactjs'
+import { RichText } from 'prismic-reactjs'
 import React from 'react'
 import styled from 'styled-components'
 import { Review } from 'types/Review'

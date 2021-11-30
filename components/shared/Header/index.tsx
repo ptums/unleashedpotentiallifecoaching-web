@@ -18,25 +18,43 @@ const HeaderContainer = styled.header`
   z-index: 99;
 `
 const SiteLogo = styled.p`
-  ${(props) => props.theme.fonts.xxxl};
-  text-align: center;
-  font-weight: medium;
+  ${(props) => props.theme.fonts.xl};
+  text-align: left;
   font-style: italic;
-  margin: 8px;
+  margin: 0 4px;
   padding: 0;
   color: ${(props) => props.theme.colors.tan};
   font-family: ${(props) => props.theme.fonts.playFairDisplay};
+
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    ${(props) => props.theme.fonts.xxxl};
+    text-align: center;
+    margin: 8px;
+  }
 `
 
 const SiteSubTitle = styled.p`
-  ${(props) => props.theme.fonts.lg};
+  ${(props) => props.theme.fonts.base};
+  text-align: left;
   font-family: ${(props) => props.theme.fonts.playFairDisplay};
   color: ${(props) => props.theme.colors.standardGreen};
-  text-align: center;
-  font-weight: medium;
+
   font-style: italic;
-  margin: 0;
-  padding: 0;
+  margin: 0 4px;
+  padding-bottom: 16px;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    ${(props) => props.theme.fonts.lg};
+    text-align: center;
+    margin: 0;
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    ${(props) => props.theme.fonts.lg};
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
 `
 
 export default Header

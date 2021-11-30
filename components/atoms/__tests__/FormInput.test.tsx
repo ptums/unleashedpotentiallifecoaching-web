@@ -20,19 +20,35 @@ const mockPropsTwo = {
 }
 
 describe('<FormInput />', () => {
-  it('renders the text input value', () => {
+  it('renders the the input value properly', () => {
     renderWithTheme(<FormInput {...mockPropsOne} />)
     const input: HTMLInputElement = screen.getByLabelText('text-input')
 
-    fireEvent.change(input, { target: { value: 'Hello!' } })
-    expect(input.value).toBe('Hello!')
+    fireEvent.change(input, { target: { value: mockPropsOne.value } })
+    expect(input.value).toBe(mockPropsOne.value)
   })
 
-  it('renders the textarea value', () => {
+  it('does not mutate the input value', () => {
+    renderWithTheme(<FormInput {...mockPropsOne} />)
+    const input: HTMLInputElement = screen.getByLabelText('text-input')
+
+    fireEvent.change(input, { target: { value: mockPropsOne.value } })
+    expect(input.value).not.toBe('Hello')
+  })
+
+  it('renders the textarea value properly', () => {
     renderWithTheme(<FormInput {...mockPropsTwo} />)
     const textarea = screen.getByLabelText('textarea-input')
 
-    fireEvent.change(textarea, { target: { value: 'Hello!' } })
+    fireEvent.change(textarea, { target: { value: mockPropsTwo.value } })
     expect((textarea as HTMLInputElement).value).toBe('Hello!')
+  })
+
+  it('does not mutate the textarea value properly', () => {
+    renderWithTheme(<FormInput {...mockPropsTwo} />)
+    const textarea = screen.getByLabelText('textarea-input')
+
+    fireEvent.change(textarea, { target: { value: mockPropsTwo.value } })
+    expect((textarea as HTMLInputElement).value).not.toBe('Hello')
   })
 })
