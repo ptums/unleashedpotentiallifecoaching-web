@@ -1,5 +1,5 @@
 const jestConfig = {
-  name: 'ScarinciHollenbeck',
+  name: 'UnleashedPotential',
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
 
