@@ -22,4 +22,3 @@ Our coaching is done virtually. We've found that meeting online allows for conve
 ## TO DOS
 
 - Build out Twilio Email APIs and Form functionality
-- Find the perfect banner images
