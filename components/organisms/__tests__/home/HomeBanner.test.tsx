@@ -1,8 +1,7 @@
 import { screen } from '@testing-library/react'
-import React from 'react'
-
-import { renderWithTheme } from 'components/test-util'
 import HomeBanner from 'components/organisms/home/HomeBanner'
+import React from 'react'
+import { renderWithTheme } from 'test-util'
 
 const mockProps = {
   imageUrl:

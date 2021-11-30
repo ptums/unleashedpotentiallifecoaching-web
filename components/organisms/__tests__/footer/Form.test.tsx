@@ -1,11 +1,11 @@
 import { screen } from '@testing-library/react'
-import Footer from 'components/shared/Footer'
+import Form from 'components/organisms/footer/Form'
 import React from 'react'
 import { renderWithTheme } from 'test-util'
 
-describe('<Footer/>', () => {
+describe('<Form/>', () => {
   it('renders snapshot', () => {
-    renderWithTheme(<Footer />)
+    renderWithTheme(<Form />)
     expect(screen).toMatchSnapshot()
   })
 })

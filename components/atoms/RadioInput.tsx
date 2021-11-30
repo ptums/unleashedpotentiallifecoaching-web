@@ -16,7 +16,14 @@ const RadioInput = ({ title, label, handleOnChange, options }: Props) => {
       <p>{title}</p>
       {options.map((option) => (
         <Label htmlFor={label} key={option}>
-          <Input onChange={handleOnChange} value={option} name={label} id={label} type="radio" />
+          <Input
+            aria-label={label}
+            onChange={handleOnChange}
+            value={option}
+            name={label}
+            id={label}
+            type="radio"
+          />
           <span>{option}</span>
         </Label>
       ))}

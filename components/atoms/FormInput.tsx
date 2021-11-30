@@ -18,6 +18,7 @@ const FormInput = ({ label, handleOnChange, value, placeHolder, type }: Props) =
       {type === 'input' && (
         <Input
           onChange={handleOnChange}
+          aria-label={label}
           value={value}
           name={label}
           id={label}
@@ -28,6 +29,7 @@ const FormInput = ({ label, handleOnChange, value, placeHolder, type }: Props) =
       {type === 'textarea' && (
         <TextArea
           onChange={handleOnChange}
+          aria-label={label}
           value={value}
           name={label}
           id={label}

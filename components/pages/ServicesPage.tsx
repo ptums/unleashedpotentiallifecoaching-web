@@ -34,8 +34,8 @@ const CoachPage = ({ page_blocks, seo, coaches, featuredReview }: Props) => {
             </div>
           ))}
         </ContentWrapper>
-        {coaches.map((coach) => (
-          <ServiceCard name={coach.name} image={coach.image} key={coach.id} />
+        {coaches.map(({ name, image }) => (
+          <ServiceCard name={name} image={image} key={name} />
         ))}
       </Container>
       <FooterReview {...featuredReview} />

@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react'
 import FeaturedBlock from 'components/organisms/home/FeaturedBlock'
-import { renderWithTheme } from 'components/test-util'
 import { Elements } from 'prismic-reactjs'
 import React from 'react'
+import { renderWithTheme } from 'test-util'
 
 const header = [
   {

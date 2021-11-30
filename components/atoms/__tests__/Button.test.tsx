@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react'
 import Button from 'components/atoms/Button'
-import { renderWithTheme } from 'components/test-util'
 import React from 'react'
+import { renderWithTheme } from 'test-util'
 
 const mockProps = {
   handleClick: jest.fn(),

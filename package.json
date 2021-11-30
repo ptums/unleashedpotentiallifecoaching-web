@@ -11,7 +11,7 @@
     "lint": " eslint . --fix",
     "format": "prettier --write .",
     "prepare": "husky install",
-    "test": "jest .",
+    "test": "jest . -u",
     "test:ci": "jest --ci --coverage --silent",
     "test:coverage": "jest --coverage ."
   },

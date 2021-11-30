@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import CoachesBanner from 'components/organisms/home/CoachesBanner'
-import { renderWithTheme } from 'components/test-util'
 import React from 'react'
+import { renderWithTheme } from 'test-util'
 
 const mockProps = [
   {

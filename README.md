@@ -23,5 +23,4 @@ Our coaching is done virtually. We've found that meeting online allows for conve
 
 - Build out Twilio Email APIs and Form functionality
 - Mobile Menu/Mobile Review
-- Make sure all components have tests and pages have snapshots
 - Find the perfect banner images

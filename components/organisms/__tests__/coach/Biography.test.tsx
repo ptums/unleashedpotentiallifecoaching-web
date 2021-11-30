@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react'
 import Biography from 'components/organisms/coach/Biography'
-import { renderWithTheme } from 'components/test-util'
 import { Elements } from 'prismic-reactjs'
 import React from 'react'
+import { renderWithTheme } from 'test-util'
 
 const mockProps = {
   biography: [

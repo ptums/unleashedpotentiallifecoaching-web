@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react'
 import WidgetsContainer from 'components/organisms/home/WidgetsContainer'
-import { renderWithTheme } from 'components/test-util'
 import { Elements } from 'prismic-reactjs'
 import React from 'react'
+import { renderWithTheme } from 'test-util'
 
 const mockProps = [
   {
