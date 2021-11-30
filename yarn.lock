@@ -4403,7 +4403,7 @@ next-sitemap@^1.6.140:
     matcher "^4.0.0"
     minimist "^1.2.5"
 
-next@^12.0.4:
+next@12:
   version "12.0.4"
   resolved "https://registry.yarnpkg.com/next/-/next-12.0.4.tgz#096578b320f0faf0bd51798decb39aaf00052efe"
   integrity sha512-1pvjcSZBm5OLoGmDhp4JwKwIE798WbqUNLuyU7w6a2jUkdWaxOYtkE/ROXQTi2pXHj7+6rm68AvhxROLX2NHQg==
