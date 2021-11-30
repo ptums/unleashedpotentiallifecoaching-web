@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Banner } from 'types/Home'
 
-const HomeBanner: React.FC<Banner> = ({ imageUrl, lineOne, lineTwo }: Banner) => {
+const HomeBanner = ({ imageUrl, lineOne, lineTwo }: Banner) => {
   return (
     <BannerContainer image={imageUrl}>
       <BannerText>

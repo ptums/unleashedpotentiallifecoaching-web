@@ -13,7 +13,7 @@ interface Props {
   coach: Coach
   featuredReview: Review
 }
-const CoachPage: React.FC<Props> = ({ coach, featuredReview }: Props) => {
+const CoachPage = ({ coach, featuredReview }: Props) => {
   const { name, image, welcomeMessage, biography, bookTimeImage, seo } = coach
 
   return (

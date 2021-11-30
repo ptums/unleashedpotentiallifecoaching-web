@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Coach } from 'types/Coach'
 import handleBooking from 'utils/booking-time'
 
-const ServiceCard: React.FC<Coach> = ({ name, image }: Coach) => {
+const ServiceCard = ({ name, image }: Coach) => {
   const { src } = image
 
   return (

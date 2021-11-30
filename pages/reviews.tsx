@@ -11,7 +11,7 @@ interface Props {
   seo: Seo
   allReviews: Review[]
 }
-const Reviews: React.FC<Props> = ({ featuredReview, seo, allReviews }: Props) => {
+const Reviews = ({ featuredReview, seo, allReviews }: Props) => {
   const pageProps = { featuredReview, seo, allReviews }
   return <ReviewsPage {...pageProps} />
 }

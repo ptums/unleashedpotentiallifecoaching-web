@@ -13,7 +13,7 @@ interface Props {
     width: string | number
   }
 }
-const ProfileCard: React.FC<Props> = ({ name, image }) => {
+const ProfileCard = ({ name, image }) => {
   return (
     <Container>
       <InnerWrapper>

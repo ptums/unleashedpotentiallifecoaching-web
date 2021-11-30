@@ -7,7 +7,7 @@ import { Coach } from 'types/Coach'
 interface Props {
   coaches: Coach[]
 }
-const CoachesBanner: React.FC<Props> = ({ coaches }: Props) => {
+const CoachesBanner = ({ coaches }: Props) => {
   return (
     <DarkGreenContainer>
       <Title>Take the first step</Title>

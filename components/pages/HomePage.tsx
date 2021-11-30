@@ -8,20 +8,20 @@ import Container from 'layouts/Container'
 import React from 'react'
 import styled from 'styled-components'
 import { Coach } from 'types/Coach'
-import { Banner, BlockWidget, FeaturdContent } from 'types/Home'
+import { Banner, BlockWidget, FeaturedContent } from 'types/Home'
 import { Review } from 'types/Review'
 import { Seo } from 'types/SEO'
 
 interface Props {
   banner: Banner
-  featuredContent: FeaturdContent
+  featuredContent: FeaturedContent
   blockWidgets: BlockWidget[]
   seo: Seo
   coaches: Coach[]
   featuredReview: Review
 }
 
-const HomePage: React.FC<Props> = ({
+const HomePage = ({
   banner,
   featuredContent,
   blockWidgets,

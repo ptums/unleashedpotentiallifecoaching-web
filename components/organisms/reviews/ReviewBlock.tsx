@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Review } from 'types/Review'
 
-const ReviewBlock: React.FC<Review> = ({ name, quote }: Review) => {
+const ReviewBlock = ({ name, quote }: Review) => {
   return (
     <Block>
       <Quote>

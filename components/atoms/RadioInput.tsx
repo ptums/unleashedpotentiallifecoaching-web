@@ -10,7 +10,7 @@ interface Props {
   options: string[]
 }
 
-const RadioInput: React.FC<Props> = ({ title, label, handleOnChange, options }: Props) => {
+const RadioInput = ({ title, label, handleOnChange, options }: Props) => {
   return (
     <RadioWrapper>
       <p>{title}</p>

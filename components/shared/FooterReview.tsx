@@ -4,7 +4,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Review } from 'types/Review'
 
-const FooterReview: React.FC<Review> = ({ name, quote }: Review) => {
+const FooterReview = ({ name, quote }: Review) => {
   return (
     <DarkGreenContainer>
       <Title>Client Love</Title>

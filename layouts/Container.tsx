@@ -5,12 +5,8 @@ interface Props {
   children: React.ReactNode
 }
 
-const Container: React.FC<Props> = ({ children }: Props) => {
-  return (
-    <ContainerLayout>
-      {children}
-    </ContainerLayout>
-  )
+const Container = ({ children }: Props) => {
+  return <ContainerLayout>{children}</ContainerLayout>
 }
 
 const ContainerLayout = styled.div`
@@ -18,7 +14,7 @@ const ContainerLayout = styled.div`
   margin: 0 auto;
 
   @media (min-width: ${(props) => props.theme.breakpoints.xxl}) {
-    max-width: 1200px;    
+    max-width: 1200px;
   }
 `
 

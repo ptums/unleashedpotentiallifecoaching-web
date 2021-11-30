@@ -16,7 +16,7 @@ interface Props {
   featuredReview: Review
 }
 
-const OurStoryPage: React.FC<Props> = ({ seo, title, pageContent, featuredReview }: Props) => {
+const OurStoryPage = ({ seo, title, pageContent, featuredReview }: Props) => {
   return (
     <>
       <SiteHead {...seo} />

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 interface Props {
   title: string
 }
-const PageBanner: React.FC<Props> = ({ title }: Props) => {
+const PageBanner = ({ title }: Props) => {
   return (
     <Container>
       <Title>{title}</Title>

@@ -20,7 +20,7 @@ interface Props {
   coaches: Coach[]
 }
 
-const CoachPage: React.FC<Props> = ({ page_blocks, seo, coaches, featuredReview }: Props) => {
+const CoachPage = ({ page_blocks, seo, coaches, featuredReview }: Props) => {
   return (
     <>
       <SiteHead {...seo} />

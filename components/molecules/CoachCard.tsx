@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Coach } from 'types/Coach'
 import { urlify } from 'utils/helpers'
 
-const CoachCard: React.FC<Coach> = ({ name, image }: Coach) => {
+const CoachCard = ({ name, image }: Coach) => {
   const { src, alt } = image
   const coachUrl = `/coach/${urlify(name)}`
   return (

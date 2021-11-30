@@ -5,7 +5,7 @@ import styled from 'styled-components'
 interface Props {
   biography: RichTextBlock[]
 }
-const Biography: React.FC<Props> = ({ biography }: Props) => {
+const Biography = ({ biography }: Props) => {
   return (
     <ContentWrapper>
       <RichText render={biography} />

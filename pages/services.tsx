@@ -12,7 +12,7 @@ interface Props {
   featuredReview: Review
   coaches: Coach[]
 }
-const Services: React.FC<Props> = ({ service, featuredReview, coaches }: Props) => {
+const Services = ({ service, featuredReview, coaches }: Props) => {
   const { page_blocks, seo } = service
 
   return (

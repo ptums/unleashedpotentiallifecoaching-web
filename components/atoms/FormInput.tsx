@@ -11,7 +11,7 @@ interface Props {
   type: string
 }
 
-const FormInput: React.FC<Props> = ({ label, handleOnChange, value, placeHolder, type }: Props) => {
+const FormInput = ({ label, handleOnChange, value, placeHolder, type }: Props) => {
   return (
     <Label htmlFor={label}>
       <span className="sr-only">{placeHolder}</span>

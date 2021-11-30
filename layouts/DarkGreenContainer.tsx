@@ -5,7 +5,7 @@ interface Props {
   children: React.ReactNode
 }
 
-const DarkGreenContainer: React.FC<Props> = ({ children }: Props) => {
+const DarkGreenContainer = ({ children }: Props) => {
   return <ContainerLayout>{children}</ContainerLayout>
 }
 

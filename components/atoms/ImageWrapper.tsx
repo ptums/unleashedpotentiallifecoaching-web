@@ -10,7 +10,7 @@ interface Props {
   alt: string
 }
 
-const ImageWrapper: React.FC<Props> = ({ src, width, height, alt, radius }: Props) => {
+const ImageWrapper = ({ src, width, height, alt, radius }: Props) => {
   const imageProps = { src, width, height, alt }
   return (
     <Container radius={radius}>

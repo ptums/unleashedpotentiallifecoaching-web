@@ -15,7 +15,7 @@ interface Props {
   featuredReview: Review
 }
 
-const CoachProfile: React.FC<Props> = ({ coach, slug, featuredReview }: Props) => {
+const CoachProfile = ({ coach, slug, featuredReview }: Props) => {
   const router = useRouter()
   if (!router.isFallback && !slug) {
     return <ErrorPage statusCode={404} />

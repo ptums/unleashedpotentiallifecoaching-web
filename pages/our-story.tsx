@@ -10,7 +10,7 @@ interface Props {
   featuredReview: Review
   page: TOurStory
 }
-const OurStory: React.FC<Props> = ({ featuredReview, page }: Props) => {
+const OurStory = ({ featuredReview, page }: Props) => {
   return <OurStoryPage {...page} featuredReview={featuredReview} />
 }
 

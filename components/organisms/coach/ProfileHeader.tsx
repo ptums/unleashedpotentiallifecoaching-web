@@ -16,7 +16,7 @@ interface Props {
   welcomeMessage?: RichTextBlock[]
 }
 
-const ProfileHeader: React.FC<Props> = ({ name, image, welcomeMessage }: Props) => {
+const ProfileHeader = ({ name, image, welcomeMessage }: Props) => {
   const firstName = name.split(' ')[0]
 
   return (

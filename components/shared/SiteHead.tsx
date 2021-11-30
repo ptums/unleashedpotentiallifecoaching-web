@@ -12,7 +12,7 @@ interface Props {
   metaDescription: string
 }
 
-const SiteHead: React.FC<Props> = ({ title, metaDescription }: Props) => {
+const SiteHead = ({ title, metaDescription }: Props) => {
   const router = useRouter()
   const slug = router.asPath
   const currentUrl = SITE_URL + slug

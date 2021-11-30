@@ -8,7 +8,7 @@ interface Props {
   title: RichTextBlock[]
   imageUrl: string | null
 }
-const RowWidget: React.FC<Props> = ({ description, title, imageUrl }: Props) => {
+const RowWidget = ({ description, title, imageUrl }: Props) => {
   const altText = title[0].text
 
   return (

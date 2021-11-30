@@ -2,7 +2,7 @@ import HomePage from 'components/pages/HomePage'
 import { GetStaticProps } from 'next'
 import React from 'react'
 import { Coach } from 'types/Coach'
-import { Banner, BlockWidget, FeaturdContent } from 'types/Home'
+import { Banner, BlockWidget, FeaturedContent } from 'types/Home'
 import { Review } from 'types/Review'
 import { Seo } from 'types/SEO'
 import { coachesQuery, homePageQuery, reviewsQuery } from 'utils/api'
@@ -10,21 +10,14 @@ import { formatReview } from 'utils/helpers'
 
 interface Props {
   banner: Banner
-  featuredContent: FeaturdContent
+  featuredContent: FeaturedContent
   blockWidgets: BlockWidget[]
   seo: Seo
   coaches: Coach[]
   featuredReview: Review
 }
 
-const Home: React.FC<Props> = ({
-  banner,
-  featuredContent,
-  blockWidgets,
-  seo,
-  coaches,
-  featuredReview,
-}: Props) => {
+const Home = ({ banner, featuredContent, blockWidgets, seo, coaches, featuredReview }: Props) => {
   const HomePageProps = {
     banner,
     featuredContent,

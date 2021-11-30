@@ -7,7 +7,7 @@ interface Props {
   btnPadding: string
   fontSize?: string
 }
-const Button: React.FC<Props> = ({ handleClick, children, btnPadding, fontSize }: Props) => {
+const Button = ({ handleClick, children, btnPadding, fontSize }: Props) => {
   return (
     <Container fontSize={fontSize} btnPadding={btnPadding} onClick={(e) => handleClick(e)}>
       {children}

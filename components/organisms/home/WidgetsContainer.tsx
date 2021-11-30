@@ -6,7 +6,7 @@ import { BlockWidget } from 'types/Home'
 interface Props {
   widgets: BlockWidget[]
 }
-const WidgetsContainer: React.FC<Props> = ({ widgets }: Props) => {
+const WidgetsContainer = ({ widgets }: Props) => {
   return (
     <Block>
       {widgets.map((widget) => (

@@ -2,9 +2,9 @@ import ImageWrapper from 'components/atoms/ImageWrapper'
 import { RichText } from 'prismic-reactjs'
 import React from 'react'
 import styled from 'styled-components'
-import { FeaturdContent } from 'types/Home'
+import { FeaturedContent } from 'types/Home'
 
-const FeaturedBlock: React.FC<FeaturdContent> = ({ imageUrl, header, body }: FeaturdContent) => {
+const FeaturedBlock = ({ imageUrl, header, body }: FeaturedContent) => {
   return (
     <Block>
       <TextContainer>

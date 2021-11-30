@@ -5,7 +5,7 @@ export interface Banner {
   lineTwo: string
 }
 
-export interface FeaturdContent {
+export interface FeaturedContent {
   imageUrl: string
   header: RichTextBlock[]
   body: RichTextBlock[]
