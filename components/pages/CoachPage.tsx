@@ -4,6 +4,7 @@ import ProfileHeader from 'components/organisms/coach/ProfileHeader'
 import FooterReview from 'components/shared/FooterReview'
 import SiteHead from 'components/shared/SiteHead'
 import Container from 'layouts/Container'
+import FadeInContainer from 'layouts/FadeInContainer'
 import React from 'react'
 import styled from 'styled-components'
 import { Coach } from 'types/Coach'
@@ -17,7 +18,7 @@ const CoachPage = ({ coach, featuredReview }: Props) => {
   const { name, image, welcomeMessage, biography, bookTimeImage, seo } = coach
 
   return (
-    <>
+    <FadeInContainer>
       <SiteHead {...seo} />
       <main>
         <Container>
@@ -29,7 +30,7 @@ const CoachPage = ({ coach, featuredReview }: Props) => {
           <FooterReview {...featuredReview} />
         </ReviewWrapper>
       </main>
-    </>
+    </FadeInContainer>
   )
 }
 

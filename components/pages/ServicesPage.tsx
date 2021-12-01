@@ -3,6 +3,7 @@ import FooterReview from 'components/shared/FooterReview'
 import PageBanner from 'components/shared/PageBanner'
 import SiteHead from 'components/shared/SiteHead'
 import Container from 'layouts/Container'
+import FadeInContainer from 'layouts/FadeInContainer'
 import { RichText, RichTextBlock } from 'prismic-reactjs'
 import React from 'react'
 import styled from 'styled-components'
@@ -22,7 +23,7 @@ interface Props {
 
 const CoachPage = ({ page_blocks, seo, coaches, featuredReview }: Props) => {
   return (
-    <>
+    <FadeInContainer>
       <SiteHead {...seo} />
       <PageBanner title="Services" />
       <Container>
@@ -39,7 +40,7 @@ const CoachPage = ({ page_blocks, seo, coaches, featuredReview }: Props) => {
         ))}
       </Container>
       <FooterReview {...featuredReview} />
-    </>
+    </FadeInContainer>
   )
 }
 

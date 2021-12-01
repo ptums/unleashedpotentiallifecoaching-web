@@ -1,9 +1,9 @@
+import Footer from 'components/shared/Footer'
+import Header from 'components/shared/Header'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import Header from 'components/shared/Header';
-import Footer from '~/components/shared/Footer';
 import GlobalStyles from 'styles/global-styles'
 import theme from 'styles/theme'
 
@@ -25,11 +25,9 @@ const App = ({ Component, pageProps }: AppProps) => {
       <SiteHead />
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <div className="fade-in">
-          <Header />
-          <Component {...pageProps} />
-          <Footer />
-        </div>
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
       </ThemeProvider>
     </>
   )

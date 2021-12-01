@@ -5,6 +5,7 @@ import WidgetsContainer from 'components/organisms/home/WidgetsContainer'
 import FooterReview from 'components/shared/FooterReview'
 import SiteHead from 'components/shared/SiteHead'
 import Container from 'layouts/Container'
+import FadeInContainer from 'layouts/FadeInContainer'
 import React from 'react'
 import styled from 'styled-components'
 import { Coach } from 'types/Coach'
@@ -30,7 +31,7 @@ const HomePage = ({
   featuredReview,
 }: Props) => {
   return (
-    <>
+    <FadeInContainer>
       <SiteHead {...seo} />
       <Page>
         <HomeBanner {...banner} />
@@ -43,7 +44,7 @@ const HomePage = ({
         </Container>
         <FooterReview {...featuredReview} />
       </Page>
-    </>
+    </FadeInContainer>
   )
 }
 

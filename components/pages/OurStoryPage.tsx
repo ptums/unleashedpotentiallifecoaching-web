@@ -1,5 +1,6 @@
 import SiteHead from 'components/shared/SiteHead'
 import Container from 'layouts/Container'
+import FadeInContainer from 'layouts/FadeInContainer'
 import { RichText, RichTextBlock } from 'prismic-reactjs'
 import React from 'react'
 import styled from 'styled-components'
@@ -18,7 +19,7 @@ interface Props {
 
 const OurStoryPage = ({ seo, title, pageContent, featuredReview }: Props) => {
   return (
-    <>
+    <FadeInContainer>
       <SiteHead {...seo} />
       <PageBanner title={title} />
       <main>
@@ -29,7 +30,7 @@ const OurStoryPage = ({ seo, title, pageContent, featuredReview }: Props) => {
         </Container>
       </main>
       <FooterReview {...featuredReview} />
-    </>
+    </FadeInContainer>
   )
 }
 

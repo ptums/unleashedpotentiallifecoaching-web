@@ -4,6 +4,7 @@ import FooterReview from 'components/shared/FooterReview'
 import PageBanner from 'components/shared/PageBanner'
 import SiteHead from 'components/shared/SiteHead'
 import Container from 'layouts/Container'
+import FadeInContainer from 'layouts/FadeInContainer'
 import React from 'react'
 import styled from 'styled-components'
 import { Review } from 'types/Review'
@@ -18,7 +19,7 @@ interface Props {
 const ReviewsPage = ({ featuredReview, seo, allReviews }: Props) => {
   const title = "Hear from Our Client's"
   return (
-    <>
+    <FadeInContainer>
       <SiteHead {...seo} />
       <PageBanner title={title} />
       <Container>
@@ -32,7 +33,7 @@ const ReviewsPage = ({ featuredReview, seo, allReviews }: Props) => {
         </PageWrapper>
       </Container>
       <FooterReview {...featuredReview} />
-    </>
+    </FadeInContainer>
   )
 }
 
