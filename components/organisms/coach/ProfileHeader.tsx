@@ -1,9 +1,8 @@
 import Button from 'components/atoms/Button'
 import ImageWrapper from 'components/atoms/ImageWrapper'
 import { RichText, RichTextBlock } from 'prismic-reactjs'
-import React, { MouseEvent } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import handleBooking from 'utils/booking-time'
 
 interface Props {
   name: string
@@ -26,7 +25,7 @@ const ProfileHeader = ({ name, image, welcomeMessage }: Props) => {
         <h1>Hi, I&apos;m {firstName}</h1>
         <RichText render={welcomeMessage} />
         <BtnWrapper>
-          <Button btnPadding="16px 64px" handleClick={handleBooking}>
+          <Button btnPadding="16px 64px" handleClick={() => console.log('hi...')}>
             Book
           </Button>
         </BtnWrapper>

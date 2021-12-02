@@ -15,7 +15,7 @@ const HeaderContainer = styled.header`
   top: 0;
   background-color: ${(props) => props.theme.colors.white};
   box-shadow: ${(props) => props.theme.colors.shadowLight};
-  z-index: 99;
+  z-index: 10;
 `
 const SiteLogo = styled.p`
   ${(props) => props.theme.fonts.xl};

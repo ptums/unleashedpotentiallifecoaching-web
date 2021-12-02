@@ -1,9 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
 import Banner from 'components/organisms/footer/Banner'
 import Contact from 'components/organisms/footer/Contact'
 import Form from 'components/organisms/footer/Form'
+import SubFooter from 'components/organisms/footer/SubFooter'
 import Container from 'layouts/Container'
+import React from 'react'
+import styled from 'styled-components'
 
 const Footer = () => {
   return (
@@ -14,13 +15,14 @@ const Footer = () => {
           <Contact />
           <Form />
         </Block>
+        <SubFooter />
       </Container>
     </FooterContainer>
   )
 }
 
 const FooterContainer = styled.footer`
-  margin: 72px 0;
+  margin-top: 72px;
   width: 100%;
 `
 

@@ -1,10 +1,9 @@
-import Button from 'components/atoms/Button'
 import React from 'react'
+import { PopupButton } from 'react-calendly'
 import styled from 'styled-components'
 import { Coach } from 'types/Coach'
-import handleBooking from 'utils/booking-time'
 
-const ServiceCard = ({ name, image }: Coach) => {
+const ServiceCard = ({ name, image, calendarUrl }: Coach) => {
   const { src } = image
 
   return (
@@ -14,10 +13,22 @@ const ServiceCard = ({ name, image }: Coach) => {
         <InnerWrapper>
           <BookTimeWrapper>
             <p>Online Coaching with {name}</p>
+            fdsafd {calendarUrl}
             <p>1 hour</p>
-            <Button btnPadding="8px 16px" fontSize="lg" handleClick={handleBooking}>
-              Book now
-            </Button>
+            <PopupButton
+              styles={{
+                padding: '8px 16px',
+                fontSize: '2.25rem',
+                lineHeight: '2.5rem',
+                borderRadius: '8px',
+                outline: 0,
+                border: 0,
+                backgroundColor: '#31464B',
+                color: '#FFF',
+              }}
+              text="Book now"
+              url={calendarUrl}
+            />
           </BookTimeWrapper>
         </InnerWrapper>
       </Container>
@@ -93,10 +104,6 @@ const BookTimeWrapper = styled.div`
 
   p:nth-child(2) {
     ${(props) => props.theme.fonts.base};
-  }
-
-  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
-    margin-left: 24px;
   }
 `
 export default ServiceCard

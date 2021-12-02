@@ -2,7 +2,6 @@ import Button from 'components/atoms/Button'
 import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
-import handleBooking from 'utils/booking-time'
 
 interface Props {
   name: string
@@ -21,7 +20,7 @@ const ProfileCard = ({ name, image }) => {
         <BookTimeWrapper>
           <p>Online Coaching with {name}</p>
           <p>1 hour</p>
-          <Button btnPadding="8px 16px" fontSize="lg" handleClick={handleBooking}>
+          <Button btnPadding="8px 16px" fontSize="lg" handleClick={() => console.log('hi...')}>
             Book now
           </Button>
         </BookTimeWrapper>

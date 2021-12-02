@@ -20,7 +20,6 @@ interface BtnProps {
   fontSize?: string
 }
 const Container = styled.button<BtnProps>`
-  margin: 8px 24px;
   border: 0;
   outline: 0;
   padding: ${({ btnPadding }) => btnPadding};

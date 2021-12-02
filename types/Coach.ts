@@ -18,6 +18,7 @@ export interface Coach {
     height: string | number
     alt: string
   }
+  calendarUrl?: string
   welcomeMessage?: RichTextBlock[]
   biography?: RichTextBlock[]
 }
