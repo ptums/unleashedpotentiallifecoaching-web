@@ -1,9 +1,12 @@
+import Button from 'components/atoms/Button'
+import BookTimePopup from 'components/molecules/BookTimePopup'
+import useModalHook from 'hooks/useModalHook'
 import React from 'react'
-import { PopupButton } from 'react-calendly'
 import styled from 'styled-components'
 import { Coach } from 'types/Coach'
 
-const ServiceCard = ({ name, image, calendarUrl }: Coach) => {
+const ServiceCard = ({ name, image }: Coach) => {
+  const [beforeClose, afterOpen, toggleModal, isOpen, opacity] = useModalHook()
   const { src } = image
 
   return (
@@ -13,25 +16,20 @@ const ServiceCard = ({ name, image, calendarUrl }: Coach) => {
         <InnerWrapper>
           <BookTimeWrapper>
             <p>Online Coaching with {name}</p>
-            fdsafd {calendarUrl}
             <p>1 hour</p>
-            <PopupButton
-              styles={{
-                padding: '8px 16px',
-                fontSize: '2.25rem',
-                lineHeight: '2.5rem',
-                borderRadius: '8px',
-                outline: 0,
-                border: 0,
-                backgroundColor: '#31464B',
-                color: '#FFF',
-              }}
-              text="Book now"
-              url={calendarUrl}
-            />
+            <Button btnPadding="8px 16px" fontSize="lg" handleClick={toggleModal}>
+              Book
+            </Button>
           </BookTimeWrapper>
         </InnerWrapper>
       </Container>
+      <BookTimePopup
+        isOpen={isOpen}
+        beforeClose={beforeClose}
+        afterOpen={afterOpen}
+        toggleModal={toggleModal}
+        opacity={opacity}
+      />
     </ServiceWrapper>
   )
 }

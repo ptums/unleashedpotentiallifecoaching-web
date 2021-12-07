@@ -2,14 +2,14 @@ import React, { MouseEvent } from 'react'
 import styled from 'styled-components'
 
 interface Props {
-  handleClick: (e: MouseEvent<HTMLButtonElement>) => void
+  handleClick: (e: MouseEvent<HTMLButtonElement> | React.FormEvent<HTMLFormElement>) => void
   children: React.ReactNode
   btnPadding: string
   fontSize?: string
 }
 const Button = ({ handleClick, children, btnPadding, fontSize }: Props) => {
   return (
-    <Container fontSize={fontSize} btnPadding={btnPadding} onClick={(e) => handleClick(e)}>
+    <Container fontSize={fontSize} btnPadding={btnPadding} onClick={handleClick}>
       {children}
     </Container>
   )

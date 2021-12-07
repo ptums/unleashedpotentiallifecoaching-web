@@ -5,6 +5,7 @@ import FooterReview from 'components/shared/FooterReview'
 import SiteHead from 'components/shared/SiteHead'
 import Container from 'layouts/Container'
 import FadeInContainer from 'layouts/FadeInContainer'
+import PopModalContainer from 'layouts/PopModalContainer'
 import React from 'react'
 import styled from 'styled-components'
 import { Coach } from 'types/Coach'
@@ -18,19 +19,21 @@ const CoachPage = ({ coach, featuredReview }: Props) => {
   const { name, image, welcomeMessage, biography, bookTimeImage, seo } = coach
 
   return (
-    <FadeInContainer>
-      <SiteHead {...seo} />
-      <main>
-        <Container>
-          <ProfileHeader name={name} image={image} welcomeMessage={welcomeMessage} />
-          <Biography biography={biography} />
-          <ProfileCard name={name} image={bookTimeImage} />
-        </Container>
-        <ReviewWrapper>
-          <FooterReview {...featuredReview} />
-        </ReviewWrapper>
-      </main>
-    </FadeInContainer>
+    <PopModalContainer>
+      <FadeInContainer>
+        <SiteHead {...seo} />
+        <main>
+          <Container>
+            <ProfileHeader name={name} image={image} welcomeMessage={welcomeMessage} />
+            <Biography biography={biography} />
+            <ProfileCard name={name} image={bookTimeImage} />
+          </Container>
+          <ReviewWrapper>
+            <FooterReview {...featuredReview} />
+          </ReviewWrapper>
+        </main>
+      </FadeInContainer>
+    </PopModalContainer>
   )
 }
 

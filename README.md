@@ -22,6 +22,6 @@ Our coaching is done virtually. We've found that meeting online allows for conve
 
 ## TO DOS
 
-- Build out Twilio Email APIs and Form functionality
 - Mobile Review, Finish tests, and pick out perfect banner images
-- Refactor Forms to use FormSpree
+- Integrate Twilio Send Grid
+- Set up Context API for coaches

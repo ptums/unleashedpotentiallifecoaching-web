@@ -1,7 +1,10 @@
 import Button from 'components/atoms/Button'
+import useModalHook from 'hooks/useModalHook'
 import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
+
+import BookTimePopup from './BookTimePopup'
 
 interface Props {
   name: string
@@ -12,7 +15,9 @@ interface Props {
     width: string | number
   }
 }
-const ProfileCard = ({ name, image }) => {
+const ProfileCard = ({ name, image }: Props) => {
+  const [beforeClose, afterOpen, toggleModal, isOpen, opacity] = useModalHook()
+
   return (
     <Container>
       <InnerWrapper>
@@ -20,11 +25,18 @@ const ProfileCard = ({ name, image }) => {
         <BookTimeWrapper>
           <p>Online Coaching with {name}</p>
           <p>1 hour</p>
-          <Button btnPadding="8px 16px" fontSize="lg" handleClick={() => console.log('hi...')}>
+          <Button btnPadding="8px 16px" fontSize="lg" handleClick={toggleModal}>
             Book now
           </Button>
         </BookTimeWrapper>
       </InnerWrapper>
+      <BookTimePopup
+        isOpen={isOpen}
+        beforeClose={beforeClose}
+        afterOpen={afterOpen}
+        toggleModal={toggleModal}
+        opacity={opacity}
+      />
     </Container>
   )
 }

@@ -1,5 +1,7 @@
 import Button from 'components/atoms/Button'
 import ImageWrapper from 'components/atoms/ImageWrapper'
+import BookTimePopup from 'components/molecules/BookTimePopup'
+import useModalHook from 'hooks/useModalHook'
 import { RichText, RichTextBlock } from 'prismic-reactjs'
 import React from 'react'
 import styled from 'styled-components'
@@ -16,6 +18,7 @@ interface Props {
 }
 
 const ProfileHeader = ({ name, image, welcomeMessage }: Props) => {
+  const [beforeClose, afterOpen, toggleModal, isOpen, opacity] = useModalHook()
   const firstName = name.split(' ')[0]
 
   return (
@@ -25,11 +28,18 @@ const ProfileHeader = ({ name, image, welcomeMessage }: Props) => {
         <h1>Hi, I&apos;m {firstName}</h1>
         <RichText render={welcomeMessage} />
         <BtnWrapper>
-          <Button btnPadding="16px 64px" handleClick={() => console.log('hi...')}>
+          <Button btnPadding="16px 64px" handleClick={toggleModal}>
             Book
           </Button>
         </BtnWrapper>
       </Details>
+      <BookTimePopup
+        isOpen={isOpen}
+        beforeClose={beforeClose}
+        afterOpen={afterOpen}
+        toggleModal={toggleModal}
+        opacity={opacity}
+      />
     </Container>
   )
 }
@@ -72,7 +82,7 @@ const Details = styled.div`
 
 const BtnWrapper = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
-    margin-left: -24px;
+    margin-left: 0px;
   }
 `
 

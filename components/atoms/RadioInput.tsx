@@ -4,26 +4,16 @@ import styled from 'styled-components'
 interface Props {
   title: string
   label: string
-  handleOnChange: (
-    e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
-  ) => void
   options: string[]
 }
 
-const RadioInput = ({ title, label, handleOnChange, options }: Props) => {
+const RadioInput = ({ title, label, options }: Props) => {
   return (
     <RadioWrapper>
       <p>{title}</p>
       {options.map((option) => (
-        <Label htmlFor={label} key={option}>
-          <Input
-            aria-label={label}
-            onChange={handleOnChange}
-            value={option}
-            name={label}
-            id={label}
-            type="radio"
-          />
+        <Label htmlFor={option} key={option}>
+          <Input aria-label={option} value={option} name={label} id={label} type="radio" />
           <span>{option}</span>
         </Label>
       ))}

@@ -2,37 +2,33 @@ import React from 'react'
 import styled from 'styled-components'
 
 interface Props {
-  label: string
-  handleOnChange: (
-    e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
-  ) => void
-  value: string
-  placeHolder?: string
+  id: string
   type: string
+  name: string
+  placeHolder: string
+  inputType?: string
+  noSr?: boolean
 }
 
-const FormInput = ({ label, handleOnChange, value, placeHolder, type }: Props) => {
+const TextInput = ({ id, type, name, placeHolder, inputType, noSr }: Props) => {
   return (
-    <Label htmlFor={label}>
-      <span className="sr-only">{placeHolder}</span>
+    <Label htmlFor={id}>
+      <span className={!noSr ? 'sr-only' : 'input-label'}>{placeHolder}</span>
       {type === 'input' && (
         <Input
-          onChange={handleOnChange}
-          aria-label={label}
-          value={value}
-          name={label}
-          id={label}
-          type="text"
+          type={inputType || 'text'}
+          name={name}
+          id={id}
           placeholder={placeHolder}
+          aria-label={id}
         />
       )}
       {type === 'textarea' && (
         <TextArea
-          onChange={handleOnChange}
-          aria-label={label}
-          value={value}
-          name={label}
-          id={label}
+          name={name}
+          id={id}
+          aria-label={id}
+          style={{ minHeight: '200px' }}
           placeholder={placeHolder}
         ></TextArea>
       )}
@@ -89,4 +85,4 @@ const TextArea = styled.textarea`
   min-height: 300px;
 `
 
-export default FormInput
+export default TextInput
