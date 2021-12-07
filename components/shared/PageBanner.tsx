@@ -1,9 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const BANNER_URL =
+  'https://res.cloudinary.com/tumulty-web-services/image/upload/v1638888993/unleashedpotential/geoffroy-hauwen-hU_A4b397bQ-unsplash.webp'
+
 interface Props {
   title: string
 }
+
 const PageBanner = ({ title }: Props) => {
   return (
     <Container>
@@ -13,9 +17,8 @@ const PageBanner = ({ title }: Props) => {
 }
 
 const Container = styled.div`
-  background: url('/standard-background.webp') no-repeat center center fixed;
+  background: url(${BANNER_URL}) no-repeat center center;
   background-size: cover;
-  height: 540px;
   position: relative;
   top: -8px;
 `
@@ -23,10 +26,10 @@ const Container = styled.div`
 const Title = styled.h1`
   margin: auto;
   text-align: center;
-  ${(props) => props.theme.fonts.xxxxxxl};
+  ${(props) => props.theme.fonts.xxxxxxxxl};
   font-family: ${(props) => props.theme.fonts.playFairDisplay};
   font-style: italic;
-  color: ${(props) => props.theme.colors.cream};
+  color: ${(props) => props.theme.colors.white};
   text-shadow: ${(props) => props.theme.colors.shadowNormal};
   display: flex;
   flex-direction: column;

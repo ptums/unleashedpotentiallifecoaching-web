@@ -1,5 +1,6 @@
 import Footer from 'components/shared/Footer'
 import Header from 'components/shared/Header'
+import { CoachesProvider } from 'contexts/CoachesContext'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import React from 'react'
@@ -22,13 +23,15 @@ const SiteHead = () => (
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
-      <SiteHead />
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
-      </ThemeProvider>
+      <CoachesProvider>
+        <SiteHead />
+        <ThemeProvider theme={theme}>
+          <GlobalStyles />
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+        </ThemeProvider>
+      </CoachesProvider>
     </>
   )
 }

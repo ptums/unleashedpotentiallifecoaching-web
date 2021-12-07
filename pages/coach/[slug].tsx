@@ -1,8 +1,9 @@
 import CoachPage from 'components/pages/CoachPage'
+import { CoachesContext } from 'contexts/CoachesContext'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import ErrorPage from 'next/error'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Coach } from 'types/Coach'
 import { Review } from 'types/Review'
 import { coachesQuery, reviewsQuery } from 'utils/api'
@@ -11,12 +12,20 @@ import { formatReview } from 'utils/helpers'
 
 interface Props {
   coach: Coach
+  coaches: Coach[]
   slug: string
   featuredReview: Review
 }
 
-const CoachProfile = ({ coach, slug, featuredReview }: Props) => {
+const CoachProfile = ({ coach, coaches, slug, featuredReview }: Props) => {
   const router = useRouter()
+  const { coaches: contextCoaches, setCoaches } = useContext(CoachesContext)
+  useEffect(() => {
+    if (!contextCoaches) {
+      setCoaches(coaches)
+    }
+  }, [coaches])
+
   if (!router.isFallback && !slug) {
     return <ErrorPage statusCode={404} />
   }
@@ -28,6 +37,26 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const request = await coachesQuery()
   const reviews = await reviewsQuery()
   const coach = request.filter((coach) => urlify(coach.node.name[0].text) === params.slug)[0]
+
+  const coaches = request
+    .map(({ node }) => ({
+      id: node.appearance_order,
+      name: node.name[0].text,
+      image: node.book_time_photo
+        ? {
+            src: node.book_time_photo.url,
+            width: node.book_time_photo.dimensions.width,
+            height: node.book_time_photo.dimensions.height,
+            alt: node.name[0].text,
+          }
+        : {
+            src: node.profile_image.url,
+            width: node.profile_image.dimensions.width,
+            height: node.profile_image.dimensions.height,
+            alt: node.name[0].text,
+          },
+    }))
+    .sort((a, b) => (a.id > b.id ? 1 : -1))
 
   const coachData = {
     seo: {
@@ -63,6 +92,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       coach: coachData,
+      coaches,
       slug: params.slug,
       featuredReview,
     },

@@ -1,7 +1,6 @@
 const fonts = {
   base: 'font-size: 1.875rem; line-height: 2.25rem',
   lg: 'font-size: 2.25rem; line-height: 2.5rem',
-  lgwide: 'font-size: 2.25rem; line-height: 3rem',
   xl: 'font-size: 3rem; line-height: 1.3',
   xlwide: 'font-size: 3rem; line-height: 1.8',
   xlmed: 'font-size: 3rem; line-height: 1.3',
@@ -11,6 +10,8 @@ const fonts = {
   xxxxl: 'font-size: 6rem; line-height: 1',
   xxxxxl: 'font-size: 8rem; line-height: 1',
   xxxxxxl: 'font-size: 9rem; line-height: 1.1',
+  xxxxxxxl: 'font-size: 10rem; line-height: 1.2',
+  xxxxxxxxl: 'font-size: 11rem; line-height: 1.2',
   lato: 'Lato, sans-serif',
   playFairDisplay: 'Playfair Display, serif',
 }

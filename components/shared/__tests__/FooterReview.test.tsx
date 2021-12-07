@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react'
 import FooterReview from 'components/shared/FooterReview'
 import { Elements } from 'prismic-reactjs'
 import React from 'react'
-import { renderWithTheme } from 'test-util'
+import { pageRoutes, renderWithTheme } from 'test-util'
 
 const mockProps = {
   quote: [
@@ -22,6 +22,7 @@ const mockProps = {
 }
 describe('<FooterReview />', () => {
   it('renders the name', () => {
+    pageRoutes('/services')
     renderWithTheme(<FooterReview {...mockProps} />)
 
     expect(
@@ -30,6 +31,7 @@ describe('<FooterReview />', () => {
   })
 
   it('renders the quote', () => {
+    pageRoutes('/services')
     renderWithTheme(<FooterReview {...mockProps} />)
 
     expect(screen.queryByText('Jess')).toBeInTheDocument()

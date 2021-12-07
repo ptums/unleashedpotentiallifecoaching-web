@@ -1,10 +1,12 @@
 import Button from 'components/atoms/Button'
 import ImageWrapper from 'components/atoms/ImageWrapper'
-import BookTimePopup from 'components/molecules/BookTimePopup'
 import useModalHook from 'hooks/useModalHook'
+import dynamic from 'next/dynamic'
 import { RichText, RichTextBlock } from 'prismic-reactjs'
 import React from 'react'
 import styled from 'styled-components'
+
+const BookTimePopup = dynamic(() => import('components/molecules/BookTimePopup'))
 
 interface Props {
   name: string

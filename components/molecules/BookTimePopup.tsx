@@ -1,12 +1,13 @@
 import Button from 'components/atoms/Button'
+import RadioInput from 'components/atoms/RadioInput'
 import TextInput from 'components/atoms/TextInput'
+import { CoachesContext } from 'contexts/CoachesContext'
 import useFormHook from 'hooks/useFormHook'
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { HiOutlineX } from 'react-icons/hi'
 import styled from 'styled-components'
 import Modal from 'styled-react-modal'
-
-import RadioInput from '../atoms/RadioInput'
+import { Coach } from 'types/Coach'
 
 interface Props {
   isOpen: boolean
@@ -17,10 +18,17 @@ interface Props {
 }
 
 const HAVE_BEEN_COACHED = ['Yes', 'No']
-const COACHES = ['Jessica Rebelo', 'Ron Lombardi', 'Ché Greeff']
 
 const BookTimePopup = ({ isOpen, beforeClose, afterOpen, toggleModal, opacity }: Props) => {
   const [onChangeHandler, onSubmitHandler] = useFormHook('review')
+  const [coachOptions, setCoachOptions] = useState<string[]>([])
+  const { coaches } = useContext(CoachesContext)
+
+  useEffect(() => {
+    if (coachOptions.length <= 0 && coaches) {
+      setCoachOptions(coaches.map(({ name }) => name))
+    }
+  }, [coaches])
 
   return (
     <StyledModal
@@ -56,7 +64,7 @@ const BookTimePopup = ({ isOpen, beforeClose, afterOpen, toggleModal, opacity }:
           title="Have you been coached before?"
           options={HAVE_BEEN_COACHED}
         />
-        <RadioInput label="coaches" title="Select a coach" options={COACHES} />
+        <RadioInput label="coaches" title="Select a coach" options={coachOptions} />
         <TextInput
           id="date"
           name="date"
@@ -79,17 +87,17 @@ const BookTimePopup = ({ isOpen, beforeClose, afterOpen, toggleModal, opacity }:
           placeHolder="Brief Message"
           type="input"
         />
-        <ButtonPostion>
+        <ButtonPosition>
           <Button btnPadding="8px 24px" handleClick={onSubmitHandler}>
             Book Time
           </Button>
-        </ButtonPostion>
+        </ButtonPosition>
       </Form>
     </StyledModal>
   )
 }
 
-const ButtonPostion = styled.div`
+const ButtonPosition = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     margin: 32px;
   }
@@ -102,6 +110,7 @@ const CloseButton = styled.button`
   position: relative;
   top: 8px;
   float: right;
+  margin-right: 8px;
   svg {
     font-size: 24px;
   }

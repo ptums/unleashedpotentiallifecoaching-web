@@ -1,9 +1,11 @@
 import Button from 'components/atoms/Button'
-import BookTimePopup from 'components/molecules/BookTimePopup'
 import useModalHook from 'hooks/useModalHook'
+import dynamic from 'next/dynamic'
 import React from 'react'
 import styled from 'styled-components'
 import { Coach } from 'types/Coach'
+
+const BookTimePopup = dynamic(() => import('components/molecules/BookTimePopup'))
 
 const ServiceCard = ({ name, image }: Coach) => {
   const [beforeClose, afterOpen, toggleModal, isOpen, opacity] = useModalHook()

@@ -1,6 +1,7 @@
 import ServicesPage from 'components/pages/ServicesPage'
+import { CoachesContext } from 'contexts/CoachesContext'
 import { GetStaticProps } from 'next'
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Coach } from 'types/Coach'
 import { Review } from 'types/Review'
 import { TServices } from 'types/Services'
@@ -14,6 +15,12 @@ interface Props {
 }
 const Services = ({ service, featuredReview, coaches }: Props) => {
   const { page_blocks, seo } = service
+  const { coaches: contextCoaches, setCoaches } = useContext(CoachesContext)
+  useEffect(() => {
+    if (!contextCoaches) {
+      setCoaches(coaches)
+    }
+  }, [coaches])
 
   return (
     <ServicesPage

@@ -17,9 +17,8 @@ interface BannerContainerProps {
   image: string
 }
 const BannerContainer = styled.div<BannerContainerProps>`
-  background: url(${({ image }) => image}) no-repeat center center fixed;
+  background: url(${({ image }) => image}) no-repeat center center;
   background-size: cover;
-  height: 720px;
 `
 
 const BannerText = styled.div`
@@ -31,7 +30,7 @@ const BannerText = styled.div`
   min-height: 640px;
 
   h1 {
-    ${(props) => props.theme.fonts.xxxxxl};
+    ${(props) => props.theme.fonts.xxxxxxl};
     margin: 0;
     padding: 0;
     text-shadow: ${(props) => props.theme.colors.shadowNormal};
@@ -40,14 +39,14 @@ const BannerText = styled.div`
   }
 
   h2 {
-    ${(props) => props.theme.fonts.xxxxxl};
+    ${(props) => props.theme.fonts.xxxxxxxl};
     color: ${(props) => props.theme.colors.white};
     text-shadow: ${(props) => props.theme.colors.shadowNormal};
     margin: 0;
     padding: 0;
     font-family: ${(props) => props.theme.fonts.playFairDisplay};
     font-style: italic;
-    font-weight: 400;
+    font-weight: 700;
   }
 `
 

@@ -10,6 +10,7 @@ Our coaching is done virtually. We've found that meeting online allows for conve
 
 **Built with**
 
+- [Context API](https://reactjs.org/docs/context.html)
 - [Framer Motion](https://motion.io)
 - [GraphQL](https://graphql.org/)
 - [Jest](https://jestjs.io/)
@@ -22,6 +23,5 @@ Our coaching is done virtually. We've found that meeting online allows for conve
 
 ## TO DOS
 
-- Mobile Review, Finish tests, and pick out perfect banner images
+- Mobile Review, Finish tests
 - Integrate Twilio Send Grid
-- Set up Context API for coaches

@@ -1,10 +1,11 @@
 import Button from 'components/atoms/Button'
 import useModalHook from 'hooks/useModalHook'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
 
-import BookTimePopup from './BookTimePopup'
+const BookTimePopup = dynamic(() => import('components/molecules/BookTimePopup'))
 
 interface Props {
   name: string
